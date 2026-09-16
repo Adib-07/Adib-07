@@ -9,7 +9,7 @@ where AI, security, deterministic logic, and human workflows meet.
 
 <br>
 
-![Portrait](assets/adib-portrait.svg)
+<img src="assets/adib-source.png" alt="Portrait" width="280">
 
 <br>
 
