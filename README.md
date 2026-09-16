@@ -4,23 +4,26 @@
 
 **Full-Stack Developer & Systems Builder**
 
-Building tools that solve real problems — from civic infrastructure to clinical decision support.
+I build software systems that operate under real constraints — safety protocols, multi-tenant isolation, human-in-the-loop verification, and local-first autonomy.
 
 </div>
 
----
+<small align="center">
 
-### What I Do
+[Work](#selected-work) · [Engineering](#engineering-stack) · [How I Build](#how-i-build) · [GitHub](https://github.com/Adib-07)
 
-I design and build full-stack applications that address practical challenges: tracking civic issues across municipalities, supporting frontline health workers with AI-assisted diagnostics, and managing campus operations. My work emphasizes **security-first architecture**, **deterministic logic**, and **evidence-based workflows**.
+</small>
 
----
+<br>
 
-### Current Focus
+| Domain | What I build | Key constraint |
+|--------|-------------|----------------|
+| **Civic operations** | Issue tracking platforms with SLA enforcement | Multi-tenant data isolation |
+| **Clinical decision support** | AI-assisted classification with deterministic safety rules | Incomplete data is refused, never guessed |
+| **Campus operations** | Closed-loop reporting and verification workflows | Role-based access at every layer |
+| **Local AI** | On-device assistants with optional LLM delegation | Zero cloud dependency for core tasks |
 
-My recent work sits at the intersection of **responsible AI** and **operational systems** — building tools where AI assists but doesn't replace human judgment, and where every decision is traceable and verifiable.
-
----
+<br>
 
 ### Selected Work
 
@@ -28,117 +31,130 @@ My recent work sits at the intersection of **responsible AI** and **operational 
 <tr>
 <td width="100%" valign="top">
 
-#### Civic-eye
+#### [Civic-eye](https://github.com/Adib-07/Civic-eye)
 
-Multi-tenant civic issue management platform with SLA tracking, evidence-based resolution, and role-based access control.
+Multi-tenant civic issue platform with SLA tracking and evidence-based resolution.
 
-**Problem:** Municipalities need structured workflows to track and resolve civic issues (potholes, water leaks, broken infrastructure) across distributed teams.
-
-**What I built:** A full-stack platform with a citizen-facing reporting flow, staff dashboards, interactive maps, and photographic evidence trails. Row Level Security enforces organization isolation at the database level.
-
-**Key technical detail:** The frontend reads and writes directly to Supabase with no custom backend server — RLS policies handle all access control.
+- **Citizen reporting flow** — guided wizard with photo evidence, GPS, and category classification
+- **Staff dashboards** — assignment, SLA compliance, before/after evidence comparison
+- **Database-enforced isolation** — Supabase RLS policies handle all access control; no custom backend server
+- **4 roles** — citizen, ward_officer, admin, super_admin with granular permissions
 
 `React 19` · `TanStack Start` · `Supabase` · `Leaflet` · `TypeScript`
 
-[View Repository →](https://github.com/Adib-07/Civic-eye)
-
 </td>
 </tr>
 <tr>
 <td width="100%" valign="top">
 
-#### IMNCI-Safe
+#### [IMNCI-Safe](https://github.com/Adib-07/IMNCI-Safe)
 
 AI-assisted child-health classification combining LLM extraction with deterministic safety rules.
 
-**Problem:** Frontline health workers screening sick children need to evaluate multiple danger signs against age-specific thresholds under time pressure with paper-based protocols.
-
-**What I built:** A three-layer safety architecture — AI extracts clinical observations, a human verifies them, then pure TypeScript rules make the classification. The core invariant: `UNKNOWN` is never converted to `false`.
-
-**Key technical detail:** 245 automated tests covering rules engine boundaries, unknown value propagation, and determinism verification.
+- **Three-layer architecture** — Gemini extracts clinical observations, a human verifies, pure TypeScript rules decide
+- **Core invariant** — `UNKNOWN` is never converted to `false`; missing critical data blocks classification
+- **Deterministic fallback** — regex-based extraction when Gemini API is unavailable
+- **245 automated tests** — rules engine boundaries, unknown value propagation, determinism verification
 
 `Next.js 16` · `Gemini API` · `Vitest` · `TypeScript` · `Tailwind CSS`
 
-[View Repository →](https://github.com/Adib-07/IMNCI-Safe)
-
 </td>
 </tr>
 <tr>
 <td width="100%" valign="top">
 
-#### CIRCUVA
+#### [CIRCUVA](https://github.com/Adib-07/CIRCUVA)
 
-Campus environmental issue reporting and operations platform with a closed-loop verification workflow.
+Campus environmental issue reporting with a closed-loop verification workflow.
 
-**Problem:** Campus waste management relies on fragmented processes — email, paper forms, informal requests — leading to overflowing bins, illegal dumping, and missed collections.
-
-**What I built:** A report → dispatch → resolve → verify pipeline with role-based dashboards, custom SVG campus maps, analytics, and before/after evidence comparison.
-
-**Key technical detail:** Custom SVG rendering engine for campus visualization and charts — no external charting libraries.
+- **Report → dispatch → resolve → verify pipeline** with role-based dashboards
+- **Custom SVG rendering** — campus map and analytics charts, no external charting libraries
+- **JWT/RBAC with PBKDF2** — four roles with enforced status transition graph
+- **66 automated tests** — security, API, and workflow coverage
 
 `FastAPI` · `SQLAlchemy` · `JWT/RBAC` · `Python` · `SQLite`
 
-[View Repository →](https://github.com/Adib-07/CIRCUVA)
-
 </td>
 </tr>
 <tr>
 <td width="100%" valign="top">
 
-#### Jervis
+#### [Jervis](https://github.com/Adib-07/Jervis)
 
-Modular personal AI assistant with voice interaction, local LLM support, and system automation.
+Modular personal AI assistant with voice interaction and local LLM support.
 
-**Problem:** Running AI tasks locally without cloud dependencies for privacy-sensitive operations.
-
-**What I built:** A lightweight assistant that accepts text, voice, or web input, routes through a command handler, and performs system tasks, manages notes/reminders, or delegates to OpenAI or local Ollama.
-
-**Key technical detail:** Runs entirely on-device with no cloud dependency for core functionality. Voice input/output via macOS-native tools.
+- **Text, voice, or web input** routed through a command handler to system tools or LLM providers
+- **On-device by default** — SQLite memory, macOS system integration, no cloud dependency for core tasks
+- **Dual LLM backend** — OpenAI when configured, local Ollama as fallback
+- **Local web UI** — conversation log, quick actions, microphone input with waveform feedback
 
 `Python` · `OpenAI/Ollama` · `SQLite` · `pyttsx3`
-
-[View Repository →](https://github.com/Adib-07/Jervis)
 
 </td>
 </tr>
 </table>
 
----
+<br>
 
 ### Engineering Stack
 
-| Domain | Technologies |
-|--------|-------------|
-| **Languages** | TypeScript, Python, JavaScript |
-| **Frontend** | React, Next.js, TanStack Router, Tailwind CSS, Leaflet |
-| **Backend** | FastAPI, Supabase, TanStack Start |
-| **Data** | PostgreSQL (Supabase), SQLite, SQLAlchemy |
-| **AI/ML** | Google Gemini, OpenAI API, Ollama |
-| **Testing** | Vitest, pytest, Testing Library |
-| **Auth & Security** | JWT, Supabase RLS, PBKDF2, RBAC, CSP |
-| **Tools** | Git, Vercel, Bun, Vite |
+<table>
+<tr>
+<td><strong>Languages</strong></td>
+<td>TypeScript, Python, JavaScript</td>
+</tr>
+<tr>
+<td><strong>Frontend</strong></td>
+<td>React, Next.js, TanStack Router, Tailwind CSS, Leaflet</td>
+</tr>
+<tr>
+<td><strong>Backend</strong></td>
+<td>FastAPI, Supabase, TanStack Start</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>PostgreSQL (Supabase), SQLite, SQLAlchemy</td>
+</tr>
+<tr>
+<td><strong>AI</strong></td>
+<td>Google Gemini, OpenAI API, Ollama</td>
+</tr>
+<tr>
+<td><strong>Testing</strong></td>
+<td>Vitest, pytest, Testing Library</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>Supabase RLS, JWT, RBAC, PBKDF2, CSP, input sanitization</td>
+</tr>
+<tr>
+<td><strong>Tools</strong></td>
+<td>Git, Vercel, Bun, Vite</td>
+</tr>
+</table>
 
----
+<br>
 
 ### How I Build
 
-- **Security-first architecture** — RLS policies, RBAC, input sanitization, CSP headers across projects
-- **Evidence-based workflows** — Photo evidence, before/after comparison, verification loops
-- **Deterministic safety rules** — AI assists but rules decide; incomplete data is refused, not guessed
-- **Automated testing** — 300+ tests across IMNCI-Safe and CIRCUVA covering boundaries and edge cases
-- **Structured documentation** — Architecture docs, API specs, and technical decision records
-- **Multi-tenant isolation** — Organization-scoped data with database-enforced access control
+| Principle | Evidence |
+|-----------|----------|
+| **Security-first architecture** | RLS policies across Civic-eye, JWT/RBAC in CIRCUVA, CSP headers and input sanitization in IMNCI-Safe |
+| **Deterministic safety rules** | IMNCI-Safe's rules engine: same input always yields same output; UNKNOWN blocks classification rather than guessing |
+| **Automated testing** | 311 tests across IMNCI-Safe (245) and CIRCUVA (66) covering boundaries, edge cases, and security |
+| **Evidence-based workflows** | Photo evidence and before/after comparison in Civic-eye and CIRCUVA; verification loops with auto-reopen |
+| **Multi-tenant isolation** | Organization-scoped data in Civic-eye enforced at the database level via Supabase RLS |
+| **Structured documentation** | Architecture docs, API specs, protocol rules, and build checklists in IMNCI-Safe and CIRCUVA |
 
----
+<br>
 
 ### Currently Exploring
 
-- **Responsible AI patterns** — Safety-first architectures where human judgment remains in the loop
-- **Edge computing** — Local-first applications that work without cloud dependencies
-- **Real-time systems** — WebSocket integration and live data synchronization
-- **Type-safe APIs** — End-to-end type safety from database to frontend
+- **Responsible AI patterns** — safety-first architectures where human judgment remains in the loop
+- **Edge / local-first computing** — applications that work without cloud dependencies
+- **Type-safe APIs** — end-to-end type safety from database to frontend
 
----
+<br>
 
 <div align="center">
 
