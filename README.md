@@ -2,10 +2,9 @@
 
 # Adib Sunasra
 
-### Full-Stack Developer · AI/ML · Systems Builder
+### B.Tech CSE (AI & ML) · Full-Stack Developer · Systems Builder
 
-Building software systems under real constraints —
-where AI, security, deterministic logic, and human workflows meet.
+Building systems where AI assists, but deterministic logic decides.
 
 <br>
 
@@ -21,11 +20,17 @@ where AI, security, deterministic logic, and human workflows meet.
 
 ---
 
+## About
+
+CSE student focused on AI/ML and full-stack development. I build practical systems that operate under real constraints — where security, reliability, and deterministic logic matter more than features. My work spans clinical AI safety, civic operations platforms, campus systems, and local-first assistants.
+
+---
+
 ## What I Am Building Toward
 
-I build practical systems where AI assists extraction and analysis, but deterministic logic makes the final call. Security belongs at the data layer — enforced by the database, not application middleware. Incomplete information stays incomplete; `UNKNOWN` is never `false`.
+AI systems where extraction is assisted but classification is deterministic. Full-stack applications with database-enforced security, not middleware. Systems designed for incomplete information — where `UNKNOWN` blocks action rather than silently producing a wrong answer.
 
-Currently working at the intersection of AI-assisted applications, full-stack development, and systems that operate under real constraints.
+Moving deeper into AI systems engineering, production-grade full-stack architecture, and security-aware design.
 
 ---
 
@@ -41,17 +46,17 @@ Currently working at the intersection of AI-assisted applications, full-stack de
 
 ## How I Think
 
-**Security belongs at the data layer.**
-Protect data with isolation and role-based access. Not middleware. Not application logic. The database enforces the rules.
+**I treat security as a data-layer responsibility.**
+Role-based access belongs in the database, not application code. The database enforces the rules. Middleware is a secondary concern.
 
-**AI assists. Rules decide.**
-Use AI for extraction and analysis. Never for critical decisions. The final call belongs to deterministic logic.
+**AI extracts. Rules decide.**
+Use AI for parsing and analysis. Never for critical decisions. The final call belongs to deterministic logic that can be tested and verified.
 
-**Incomplete information should remain incomplete.**
-Missing data blocks decision. Never force a result. `UNKNOWN` is not `false`.
+**Missing information stays missing.**
+Incomplete data blocks action. `UNKNOWN` is never converted to `false`. The system refuses to classify rather than guess.
 
-**Evidence should survive the workflow.**
-Every action should be traceable, verifiable, and reproducible. Photos, logs, audit trails — they exist because the system requires them.
+**Every action leaves evidence.**
+Photos, logs, audit trails — they exist because the system requires traceability. Workflows without evidence are workflows without accountability.
 
 ---
 
@@ -89,9 +94,9 @@ Every action should be traceable, verifiable, and reproducible. Photos, logs, au
 
 ### Civic-eye
 
-Civic operations platform with database-enforced access control.
+Multi-tenant civic operations platform with database-enforced access control.
 
-Multi-tenant isolation · Supabase RLS · 4-role system · Photo evidence · GPS
+RLS · 4-role system · Photo evidence · GPS · SLA tracking
 
 [Source](https://github.com/Adib-07/Civic-eye) · [Live Demo](https://civic-eye-alpha.vercel.app)
 
@@ -101,7 +106,7 @@ Multi-tenant isolation · Supabase RLS · 4-role system · Photo evidence · GPS
 
 AI-assisted clinical classification with deterministic safety rules.
 
-LLM extraction · Human verification · Deterministic rules · UNKNOWN invariant · 245 tests
+Gemini extraction · Human verification · Deterministic rules · UNKNOWN invariant · 245 tests
 
 [Source](https://github.com/Adib-07/IMNCI-Safe)
 
