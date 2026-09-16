@@ -8,7 +8,7 @@ Building systems where AI assists, but deterministic logic decides.
 
 <br>
 
-<img src="assets/adib-source.png" alt="Portrait" width="280">
+<img src="assets/adib-generating.svg" alt="Animated terminal portrait of Adib Sunasra progressively generated from particles into a detailed portrait" width="760">
 
 <br>
 
