@@ -2,17 +2,14 @@
 
 # Adib Sunasra
 
-**Full-Stack Developer & Systems Builder**
+### Full-Stack Developer · Systems Builder
 
-</div>
+Building software systems under real constraints —
+where AI, security, deterministic logic, and human workflows meet.
 
 <br>
 
-I build software systems that operate under real constraints — safety protocols, multi-tenant isolation, human-in-the-loop verification, and local-first autonomy.
-
-<div align="center">
-
-[Selected Work](#selected-work) · [Systems Map](#systems-map) · [Engineering Principles](#engineering-principles) · [Stack](#stack)
+[WORK](#selected-work) · [SYSTEMS](#systems-map) · [ENGINEERING](#engineering-principles) · [STACK](#stack)
 
 </div>
 
@@ -28,22 +25,18 @@ I build software systems that operate under real constraints — safety protocol
 
 </div>
 
-<br>
-
 ---
 
 ## Selected Work
 
-### [Civic-eye](https://github.com/Adib-07/Civic-eye) · Civic Operations
+### 01 / Civic-eye — Civic Operations
 
-Multi-tenant civic issue platform with SLA tracking and evidence-based resolution.
+Multi-tenant civic issue platform with database-enforced access control and SLA tracking.
 
-| What it does | How it's enforced |
-|---|---|
-| Citizen reporting with photo evidence, GPS, category classification | Guided wizard flow |
-| Staff dashboards with assignment, SLA compliance, before/after comparison | Role-based views |
-| Multi-tenant data isolation | Supabase RLS — no custom backend server |
-| 4 roles: citizen, ward_officer, admin, super_admin | Granular permissions at database level |
+- Supabase RLS — all access control enforced at the database layer
+- 4-role system: citizen, ward_officer, admin, super_admin
+- Photo evidence, GPS, before/after resolution comparison
+- No custom backend server — frontend reads directly via Supabase SDK
 
 `React 19` · `TanStack Start` · `Supabase` · `Leaflet` · `TypeScript`
 
@@ -53,22 +46,18 @@ Multi-tenant civic issue platform with SLA tracking and evidence-based resolutio
 
 </div>
 
-<br>
-
 ---
 
-### [IMNCI-Safe](https://github.com/Adib-07/IMNCI-Safe) · Responsible AI
+### 02 / IMNCI-Safe — Responsible AI
 
-AI-assisted child-health classification combining LLM extraction with deterministic safety rules.
+Clinical decision support combining LLM extraction with deterministic safety rules.
 
-| What it does | How it's enforced |
-|---|---|
-| Three-layer architecture: Gemini extracts, human verifies, rules decide | Separation of concerns |
-| `UNKNOWN` is never converted to `false` | Core invariant — missing data blocks classification |
-| Regex-based extraction when Gemini API is unavailable | Deterministic fallback |
-| 245 automated tests | Rules engine boundaries, unknown propagation, determinism |
+- Three-layer architecture: Gemini extracts → human verifies → rules decide
+- `UNKNOWN` is never converted to `false` — missing data blocks classification
+- Regex fallback when Gemini API is unavailable
+- 245 automated tests across rules engine, safety boundaries, and extraction
 
-`Next.js 16` · `Gemini API` · `Vitest` · `TypeScript` · `Tailwind CSS`
+`Next.js 16` · `Gemini` · `Vitest` · `TypeScript` · `Tailwind CSS`
 
 <div align="center">
 
@@ -76,20 +65,16 @@ AI-assisted child-health classification combining LLM extraction with determinis
 
 </div>
 
-<br>
-
 ---
 
-### [CIRCUVA](https://github.com/Adib-07/CIRCUVA) · Campus Operations
+### 03 / CIRCUVA — Campus Operations
 
-Campus environmental issue reporting with a closed-loop verification workflow.
+Campus issue reporting with a closed-loop verification workflow and custom SVG rendering.
 
-| What it does | How it's enforced |
-|---|---|
-| Report → dispatch → resolve → verify pipeline | Role-based dashboards |
-| Custom SVG rendering — campus map and analytics charts | No external charting libraries |
-| JWT/RBAC with PBKDF2 | Four roles with enforced status transition graph |
-| 66 automated tests | Security, API, and workflow coverage |
+- Report → dispatch → resolve → verify pipeline with enforced status transitions
+- Custom SVG campus map and analytics charts — zero external charting libraries
+- JWT/RBAC with PBKDF2-SHA256 and role-based access control
+- 66 automated tests covering security, API, and workflow paths
 
 `FastAPI` · `SQLAlchemy` · `JWT/RBAC` · `Python` · `SQLite`
 
@@ -99,20 +84,16 @@ Campus environmental issue reporting with a closed-loop verification workflow.
 
 </div>
 
-<br>
-
 ---
 
-### [Jervis](https://github.com/Adib-07/Jervis) · Local AI
+### 04 / Jervis — Local AI
 
 Modular personal AI assistant with voice interaction and local LLM support.
 
-| What it does | How it's enforced |
-|---|---|
-| Text, voice, or web input routed through command handler | System tools or LLM providers |
-| On-device by default — SQLite memory, macOS integration | No cloud dependency for core tasks |
-| Dual LLM backend — OpenAI when configured, Ollama as fallback | Graceful degradation |
-| Local web UI with conversation log, quick actions, microphone input | Waveform feedback |
+- Text, voice, or web input routed through command handler
+- On-device by default — SQLite memory, macOS integration, no cloud dependency
+- Dual LLM backend: OpenAI when configured, Ollama as fallback
+- Local web UI with conversation log, quick actions, microphone input
 
 `Python` · `OpenAI/Ollama` · `SQLite` · `pyttsx3`
 
@@ -121,8 +102,6 @@ Modular personal AI assistant with voice interaction and local LLM support.
 [**Source**](https://github.com/Adib-07/Jervis)
 
 </div>
-
-<br>
 
 ---
 
@@ -134,40 +113,53 @@ Modular personal AI assistant with voice interaction and local LLM support.
 
 </div>
 
-<br>
-
 ---
 
-## Evidence
+## Proof
 
-| Metric | Detail |
-|---|---|
-| **311 tests** | 245 IMNCI-Safe + 66 CIRCUVA |
-| **RLS policies** | Supabase Row Level Security in Civic-eye |
-| **JWT/RBAC** | python-jose + PBKDF2-SHA256 in CIRCUVA |
-| **Deterministic rules** | Same input → same output, always |
-| **UNKNOWN invariant** | Missing critical data blocks classification |
-| **Custom SVG rendering** | Campus map and charts, zero external libraries |
-| **Local-first AI** | On-device processing, optional cloud delegation |
+<div align="center">
 
-<br>
+| **311** | **DATABASE-ENFORCED** | **UNKNOWN ≠ false** | **JWT / RBAC** | **CUSTOM SVG** | **LOCAL-FIRST** |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| AUTOMATED TESTS | RLS policies | SAFETY INVARIANT | ACCESS CONTROL | CAMPUS MAP | AI ARCHITECTURE |
+| 245 IMNCI-Safe + 66 CIRCUVA | Civic-eye | IMNCI-Safe | CIRCUVA | CIRCUVA | Jervis |
+
+</div>
 
 ---
 
 ## Stack
 
-| Layer | Technologies |
-|---|---|
-| **Languages** | TypeScript, Python, JavaScript |
-| **Frontend** | React, Next.js, TanStack Router, Tailwind CSS, Leaflet |
-| **Backend** | FastAPI, Supabase, TanStack Start |
-| **Data** | PostgreSQL (Supabase), SQLite, SQLAlchemy |
-| **AI** | Google Gemini, OpenAI API, Ollama |
-| **Testing** | Vitest, pytest, Testing Library |
-| **Security** | Supabase RLS, JWT, RBAC, PBKDF2, CSP |
-| **Tools** | Git, Vercel, Bun, Vite |
+<div align="center">
 
-<br>
+**LANGUAGES**
+TypeScript · Python · JavaScript
+
+**APPLICATIONS**
+React · Next.js · TanStack · FastAPI
+
+**DATA**
+Supabase · PostgreSQL · SQLite · SQLAlchemy
+
+**AI**
+Gemini · OpenAI · Ollama
+
+**ENGINEERING**
+Vitest · pytest · RLS · RBAC · JWT · PBKDF2
+
+</div>
+
+---
+
+## How I Think
+
+**AI assists. Rules decide.**
+
+**Security belongs at the data layer.**
+
+**Incomplete information should remain incomplete.**
+
+**Evidence should survive the workflow.**
 
 ---
 

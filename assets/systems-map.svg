@@ -1,94 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" fill="none">
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
-    .label-primary { font-size: 13px; font-weight: 600; fill: #1f2937; }
-    .label-secondary { font-size: 11px; fill: #6b7280; }
-    .label-accent { font-size: 10px; font-weight: 500; fill: #2563eb; }
-    .node-stroke { stroke: #d1d5db; stroke-width: 1; }
-    .line { stroke: #d1d5db; stroke-width: 1; }
-    .line-accent { stroke: #2563eb; stroke-width: 1.5; stroke-dasharray: 4 2; }
-    .center-circle { fill: #f8fafc; stroke: #2563eb; stroke-width: 2; }
-    .project-rect { fill: #ffffff; rx: 6; }
-    .theme-pill { fill: #f1f5f9; rx: 4; }
+    .lp { font-size: 12px; font-weight: 600; fill: #1f2937; }
+    .ls { font-size: 10px; fill: #6b7280; }
+    .la { font-size: 10px; font-weight: 600; fill: #2563eb; }
+    .ln { font-size: 9px; fill: #6b7280; }
+    .c { stroke: #d1d5db; stroke-width: 1; }
+    .ca { stroke: #2563eb; stroke-width: 1.5; stroke-dasharray: 4 2; }
     @media (prefers-color-scheme: dark) {
-      .label-primary { fill: #e5e7eb; }
-      .label-secondary { fill: #9ca3af; }
-      .label-accent { fill: #60a5fa; }
-      .node-stroke { stroke: #374151; }
-      .line { stroke: #374151; }
-      .line-accent { stroke: #60a5fa; }
-      .center-circle { fill: #111827; stroke: #60a5fa; }
-      .project-rect { fill: #1f2937; }
-      .theme-pill { fill: #1e293b; }
+      .lp { fill: #e5e7eb; }
+      .ls { fill: #9ca3af; }
+      .la { fill: #60a5fa; }
+      .ln { fill: #6b7280; }
+      .c { stroke: #374151; }
+      .ca { stroke: #60a5fa; }
     }
   </style>
 
-  <!-- Title -->
-  <text x="400" y="28" text-anchor="middle" class="label-primary" font-size="14" letter-spacing="0.5">SYSTEMS MAP</text>
-  <text x="400" y="44" text-anchor="middle" class="label-secondary" font-size="10">Projects aligned to engineering themes</text>
+  <text x="400" y="22" text-anchor="middle" class="lp" font-size="13" letter-spacing="1">SYSTEMS MAP</text>
 
-  <!-- Center node: ADIB -->
-  <circle cx="400" cy="100" r="28" class="center-circle"/>
-  <text x="400" y="96" text-anchor="middle" class="label-primary" font-size="12">ADIB</text>
-  <text x="400" y="110" text-anchor="middle" class="label-accent" font-size="9">Systems Builder</text>
+  <circle cx="400" cy="75" r="26" fill="#f8fafc" stroke="#2563eb" stroke-width="2"/>
+  <text x="400" y="72" text-anchor="middle" class="lp" font-size="11">ADIB</text>
+  <text x="400" y="85" text-anchor="middle" class="la" font-size="8">Systems Builder</text>
 
-  <!-- Vertical line from center -->
-  <line x1="400" y1="128" x2="400" y2="179" class="line"/>
+  <line x1="400" y1="101" x2="400" y2="163" class="c"/>
 
-  <!-- Three theme pills -->
-  <!-- AI -->
-  <rect x="130" y="165" width="100" height="28" class="theme-pill"/>
-  <text x="180" y="183" text-anchor="middle" class="label-accent" font-size="11" font-weight="600">AI</text>
+  <rect x="110" y="165" width="200" height="140" rx="6" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+  <text x="210" y="187" text-anchor="middle" class="lp" font-size="11">IMNCI-Safe</text>
+  <text x="210" y="202" text-anchor="middle" class="ls">Responsible AI</text>
+  <line x1="140" y1="215" x2="280" y2="215" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="210" y="232" text-anchor="middle" class="la">Deterministic rules</text>
+  <text x="210" y="248" text-anchor="middle" class="ln">LLM extracts, rules decide</text>
+  <text x="210" y="268" text-anchor="middle" class="ln">245 tests</text>
+  <text x="210" y="284" text-anchor="middle" class="ln">UNKNOWN invariant</text>
 
-  <!-- FULL-STACK -->
-  <rect x="350" y="165" width="100" height="28" class="theme-pill"/>
-  <text x="400" y="183" text-anchor="middle" class="label-accent" font-size="11" font-weight="600">FULL-STACK</text>
+  <rect x="300" y="165" width="200" height="140" rx="6" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+  <text x="400" y="187" text-anchor="middle" class="lp" font-size="11">Civic-eye</text>
+  <text x="400" y="202" text-anchor="middle" class="ls">Civic Operations</text>
+  <line x1="330" y1="215" x2="470" y2="215" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="400" y="232" text-anchor="middle" class="la">RLS / multi-tenant</text>
+  <text x="400" y="248" text-anchor="middle" class="ln">Database-enforced access</text>
+  <text x="400" y="268" text-anchor="middle" class="ln">4 roles, no custom backend</text>
+  <text x="400" y="284" text-anchor="middle" class="ln">Live demo</text>
 
-  <!-- SYSTEMS -->
-  <rect x="570" y="165" width="100" height="28" class="theme-pill"/>
-  <text x="620" y="183" text-anchor="middle" class="label-accent" font-size="11" font-weight="600">SYSTEMS</text>
+  <rect x="490" y="165" width="200" height="140" rx="6" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+  <text x="590" y="187" text-anchor="middle" class="lp" font-size="11">CIRCUVA</text>
+  <text x="590" y="202" text-anchor="middle" class="ls">Campus Operations</text>
+  <line x1="520" y1="215" x2="660" y2="215" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="590" y="232" text-anchor="middle" class="la">Verification workflows</text>
+  <text x="590" y="248" text-anchor="middle" class="ln">Closed-loop report pipeline</text>
+  <text x="590" y="268" text-anchor="middle" class="ln">66 tests, JWT/RBAC</text>
+  <text x="590" y="284" text-anchor="middle" class="ln">Custom SVG rendering</text>
 
-  <!-- Lines from center to themes -->
-  <line x1="400" y1="179" x2="180" y2="179" class="line"/>
-  <line x1="400" y1="179" x2="620" y2="179" class="line"/>
+  <line x1="210" y1="163" x2="210" y2="165" class="ca"/>
+  <line x1="400" y1="163" x2="400" y2="165" class="ca"/>
+  <line x1="590" y1="163" x2="590" y2="165" class="ca"/>
 
-  <!-- Project nodes -->
-  <!-- IMNCI-Safe (AI) -->
-  <rect x="80" y="230" width="200" height="80" class="project-rect node-stroke"/>
-  <text x="180" y="254" text-anchor="middle" class="label-primary" font-size="12" font-weight="600">IMNCI-Safe</text>
-  <text x="180" y="270" text-anchor="middle" class="label-secondary" font-size="10">Responsible AI</text>
-  <text x="180" y="286" text-anchor="middle" class="label-accent" font-size="9">Deterministic rules</text>
-  <text x="180" y="300" text-anchor="middle" class="label-secondary" font-size="9">245 tests</text>
+  <line x1="400" y1="305" x2="400" y2="340" class="c"/>
 
-  <!-- Civic-eye (Full-Stack) -->
-  <rect x="300" y="230" width="200" height="80" class="project-rect node-stroke"/>
-  <text x="400" y="254" text-anchor="middle" class="label-primary" font-size="12" font-weight="600">Civic-eye</text>
-  <text x="400" y="270" text-anchor="middle" class="label-secondary" font-size="10">Civic operations</text>
-  <text x="400" y="286" text-anchor="middle" class="label-accent" font-size="9">RLS / multi-tenant</text>
-  <text x="400" y="300" text-anchor="middle" class="label-secondary" font-size="9">4 roles, database-enforced</text>
+  <rect x="270" y="340" width="260" height="60" rx="6" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+  <text x="400" y="362" text-anchor="middle" class="lp" font-size="11">Jervis</text>
+  <text x="400" y="377" text-anchor="middle" class="ls">Local AI</text>
+  <text x="400" y="392" text-anchor="middle" class="ln">On-device autonomy · Voice + LLM + SQLite</text>
 
-  <!-- CIRCUVA (Systems) -->
-  <rect x="520" y="230" width="200" height="80" class="project-rect node-stroke"/>
-  <text x="620" y="254" text-anchor="middle" class="label-primary" font-size="12" font-weight="600">CIRCUVA</text>
-  <text x="620" y="270" text-anchor="middle" class="label-secondary" font-size="10">Campus operations</text>
-  <text x="620" y="286" text-anchor="middle" class="label-accent" font-size="9">Verification workflows</text>
-  <text x="620" y="300" text-anchor="middle" class="label-secondary" font-size="9">66 tests</text>
-
-  <!-- Lines from themes to projects -->
-  <line x1="180" y1="193" x2="180" y2="228" class="line-accent"/>
-  <line x1="400" y1="193" x2="400" y2="228" class="line-accent"/>
-  <line x1="620" y1="193" x2="620" y2="228" class="line-accent"/>
-
-  <!-- Jervis (Local AI) - below, spanning -->
-  <line x1="400" y1="310" x2="400" y2="360" class="line"/>
-
-  <rect x="270" y="360" width="260" height="80" class="project-rect node-stroke"/>
-  <text x="400" y="384" text-anchor="middle" class="label-primary" font-size="12" font-weight="600">Jervis</text>
-  <text x="400" y="400" text-anchor="middle" class="label-secondary" font-size="10">Local AI</text>
-  <text x="400" y="416" text-anchor="middle" class="label-accent" font-size="9">On-device autonomy</text>
-  <text x="400" y="430" text-anchor="middle" class="label-secondary" font-size="9">Voice + LLM + SQLite</text>
-
-  <!-- Bottom label -->
-  <text x="400" y="480" text-anchor="middle" class="label-secondary" font-size="10">Each project enforces constraints at the architecture level, not as an afterthought</text>
+  <text x="400" y="418" text-anchor="middle" class="ls" font-size="9">Each project enforces constraints at the architecture level</text>
 
 </svg>

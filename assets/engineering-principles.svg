@@ -1,56 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" fill="none">
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
-    .title { font-size: 14px; font-weight: 600; fill: #1f2937; letter-spacing: 0.5px; }
-    .subtitle { font-size: 10px; fill: #6b7280; }
-    .num { font-size: 13px; font-weight: 700; fill: #2563eb; font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace; }
-    .principle { font-size: 12px; font-weight: 600; fill: #1f2937; }
-    .evidence { font-size: 10px; fill: #6b7280; }
-    .flow { font-size: 10px; fill: #9ca3af; font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace; }
-    .line { stroke: #e5e7eb; stroke-width: 1; }
-    .dot { fill: #2563eb; }
+    .t { font-size: 13px; font-weight: 600; fill: #1f2937; letter-spacing: 0.5px; }
+    .st { font-size: 10px; fill: #6b7280; }
+    .n { font-size: 22px; font-weight: 700; fill: #2563eb; font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace; }
+    .p { font-size: 12px; font-weight: 600; fill: #1f2937; }
+    .d { font-size: 10px; fill: #6b7280; }
+    .s { font-size: 9px; fill: #9ca3af; font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace; }
+    .c { stroke: #e5e7eb; stroke-width: 1; }
     @media (prefers-color-scheme: dark) {
-      .title { fill: #e5e7eb; }
-      .subtitle { fill: #9ca3af; }
-      .num { fill: #60a5fa; }
-      .principle { fill: #e5e7eb; }
-      .evidence { fill: #9ca3af; }
-      .flow { fill: #6b7280; }
-      .line { stroke: #374151; }
-      .dot { fill: #60a5fa; }
+      .t { fill: #e5e7eb; }
+      .st { fill: #9ca3af; }
+      .n { fill: #60a5fa; }
+      .p { fill: #e5e7eb; }
+      .d { fill: #9ca3af; }
+      .s { fill: #6b7280; }
+      .c { stroke: #374151; }
     }
   </style>
 
-  <!-- Header -->
-  <text x="350" y="24" text-anchor="middle" class="title">ENGINEERING PRINCIPLES</text>
-  <text x="350" y="40" text-anchor="middle" class="subtitle">Patterns demonstrated across repositories</text>
+  <text x="350" y="24" text-anchor="middle" class="t">ENGINEERING PRINCIPLES</text>
+  <text x="350" y="40" text-anchor="middle" class="st">Patterns enforced across repositories</text>
 
-  <!-- Principle 01 -->
-  <line x1="40" y1="68" x2="660" y2="68" class="line"/>
-  <text x="50" y="90" class="num">01</text>
-  <text x="85" y="90" class="principle">VERIFY BEFORE TRUST</text>
-  <text x="85" y="106" class="flow">AI extraction → human verification → deterministic decision</text>
-  <text x="85" y="122" class="evidence">IMNCI-Safe: LLM extracts observations, clinician verifies, rules engine decides</text>
+  <line x1="40" y1="60" x2="660" y2="60" class="c"/>
+  <text x="55" y="88" class="n">01</text>
+  <text x="95" y="88" class="p">SECURITY BOUNDARIES</text>
+  <text x="95" y="106" class="d">Database-enforced isolation and role controls</text>
+  <text x="95" y="124" class="s">Civic-eye: Supabase RLS — no custom backend</text>
 
-  <!-- Principle 02 -->
-  <line x1="40" y1="140" x2="660" y2="140" class="line"/>
-  <text x="50" y="162" class="num">02</text>
-  <text x="85" y="162" class="principle">ENFORCE AT THE DATA LAYER</text>
-  <text x="85" y="178" class="flow">Role → policy → organization isolation</text>
-  <text x="85" y="194" class="evidence">Civic-eye: Supabase RLS policies handle all access control, no custom backend</text>
+  <line x1="40" y1="150" x2="660" y2="150" class="c"/>
+  <text x="55" y="178" class="n">02</text>
+  <text x="95" y="178" class="p">HUMAN VERIFICATION</text>
+  <text x="95" y="196" class="d">AI assists extraction; verification remains explicit</text>
+  <text x="95" y="214" class="s">IMNCI-Safe: LLM → clinician → deterministic rules</text>
 
-  <!-- Principle 03 -->
-  <line x1="40" y1="212" x2="660" y2="212" class="line"/>
-  <text x="50" y="234" class="num">03</text>
-  <text x="85" y="234" class="principle">EVIDENCE OVER ASSUMPTION</text>
-  <text x="85" y="250" class="flow">Report → evidence → resolution → verification</text>
-  <text x="85" y="266" class="evidence">Civic-eye & CIRCUVA: photo evidence, before/after comparison, verification loops</text>
+  <line x1="40" y1="240" x2="660" y2="240" class="c"/>
+  <text x="55" y="268" class="n">03</text>
+  <text x="95" y="268" class="p">DETERMINISTIC LOGIC</text>
+  <text x="95" y="286" class="d">Safety-critical classification uses deterministic rules</text>
+  <text x="95" y="304" class="s">IMNCI-Safe: same input → same output, always</text>
 
-  <!-- Principle 04 -->
-  <line x1="40" y1="284" x2="660" y2="284" class="line"/>
-  <text x="50" y="306" class="num">04</text>
-  <text x="85" y="306" class="principle">FAIL CLOSED</text>
-  <text x="85" y="322" class="flow">UNKNOWN ≠ false — missing data blocks classification</text>
-  <text x="85" y="338" class="evidence">IMNCI-Safe: core invariant enforced across 245 tests</text>
+  <line x1="40" y1="330" x2="660" y2="330" class="c"/>
+  <text x="55" y="358" class="n">04</text>
+  <text x="95" y="358" class="p">EVIDENCE &amp; TRACEABILITY</text>
+  <text x="95" y="376" class="d">Workflows connect actions and outcomes to observable evidence</text>
+  <text x="95" y="394" class="s">Civic-eye &amp; CIRCUVA: photo evidence, verification loops</text>
 
 </svg>
