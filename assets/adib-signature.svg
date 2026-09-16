@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" fill="none">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .stroke { stroke: #60a5fa; }
+      .fill { fill: #60a5fa; }
+      .text { fill: #9ca3af; }
+    }
+    @media (prefers-color-scheme: light) {
+      .stroke { stroke: #2563eb; }
+      .fill { fill: #2563eb; }
+      .text { fill: #6b7280; }
+    }
+    text { font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace; }
+  </style>
+
+  <!-- Signature mark - geometric monogram -->
+  <g transform="translate(20, 10)">
+    <!-- A -->
+    <path d="M10 70 L30 15 L50 70" class="stroke" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="17" y1="50" x2="43" y2="50" class="stroke" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- S -->
+    <path d="M65 25 Q60 15 70 15 Q80 15 80 25 Q80 35 70 40 Q60 45 60 55 Q60 65 70 65 Q80 65 80 55" class="stroke" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Connection line -->
+    <line x1="55" y1="42" x2="60" y2="42" class="stroke" stroke-width="0.5" opacity="0.4"/>
+
+    <!-- Underline accent -->
+    <line x1="10" y1="78" x2="80" y2="78" class="stroke" stroke-width="1" opacity="0.3"/>
+  </g>
+
+  <!-- Full name -->
+  <text x="120" y="45" class="text" font-size="14" font-weight="600" letter-spacing="3">ADIB</text>
+  <text x="120" y="65" class="text" font-size="10" letter-spacing="5">SUNASRA</text>
+
+  <!-- Decorative dots -->
+  <circle cx="120" cy="75" r="1" class="fill" opacity="0.5"/>
+  <circle cx="128" cy="75" r="1" class="fill" opacity="0.3"/>
+  <circle cx="136" cy="75" r="1" class="fill" opacity="0.2"/>
+
+</svg>

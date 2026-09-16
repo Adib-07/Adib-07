@@ -1,0 +1,439 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 120" fill="none">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0a0a0f; }
+      .text { fill: #e5e7eb; }
+      .text-dim { fill: #6b7280; }
+      .text-accent { fill: #60a5fa; }
+      .cell-0 { fill: #161b22; }
+      .cell-1 { fill: #0e4429; }
+      .cell-2 { fill: #006d32; }
+      .cell-3 { fill: #26a641; }
+      .cell-4 { fill: #39d353; }
+      .line { stroke: #1a1a2e; }
+      .border { stroke: #1a1a2e; fill: none; }
+    }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #fafafa; }
+      .text { fill: #1f2937; }
+      .text-dim { fill: #9ca3af; }
+      .text-accent { fill: #2563eb; }
+      .cell-0 { fill: #ebedf0; }
+      .cell-1 { fill: #9be9a8; }
+      .cell-2 { fill: #40c463; }
+      .cell-3 { fill: #30a14e; }
+      .cell-4 { fill: #216e39; }
+      .line { stroke: #e5e7eb; }
+      .border { stroke: #e5e7eb; fill: none; }
+    }
+    text { font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace; }
+    .title { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; }
+    .label { font-size: 7px; }
+    .stat { font-size: 9px; font-weight: 600; }
+  </style>
+
+  <rect width="720" height="120" class="bg"/>
+
+  <!-- Title -->
+  <text x="20" y="18" class="title text">GITHUB ACTIVITY</text>
+  <text x="20" y="30" class="label text-dim">Contributions &amp; repositories</text>
+
+  <!-- Contribution grid -->
+  <g transform="translate(20, 42)">
+    <rect x="0" y="0" width="520" height="68" rx="2" class="border" stroke-width="0.5"/>
+    <rect x="4" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-09-14: 0 contributions</title></rect>
+    <rect x="15" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-09-15: 0 contributions</title></rect>
+    <rect x="15" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-09-16: 0 contributions</title></rect>
+    <rect x="15" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-09-17: 0 contributions</title></rect>
+    <rect x="15" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-09-18: 0 contributions</title></rect>
+    <rect x="15" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-09-19: 0 contributions</title></rect>
+    <rect x="15" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-09-20: 0 contributions</title></rect>
+    <rect x="15" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-09-21: 0 contributions</title></rect>
+    <rect x="26" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-09-22: 0 contributions</title></rect>
+    <rect x="26" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-09-23: 0 contributions</title></rect>
+    <rect x="26" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-09-24: 0 contributions</title></rect>
+    <rect x="26" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-09-25: 0 contributions</title></rect>
+    <rect x="26" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-09-26: 0 contributions</title></rect>
+    <rect x="26" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-09-27: 0 contributions</title></rect>
+    <rect x="26" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-09-28: 0 contributions</title></rect>
+    <rect x="37" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-09-29: 0 contributions</title></rect>
+    <rect x="37" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-09-30: 0 contributions</title></rect>
+    <rect x="37" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-10-01: 0 contributions</title></rect>
+    <rect x="37" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-10-02: 0 contributions</title></rect>
+    <rect x="37" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-10-03: 0 contributions</title></rect>
+    <rect x="37" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-10-04: 0 contributions</title></rect>
+    <rect x="37" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-10-05: 0 contributions</title></rect>
+    <rect x="48" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-10-06: 0 contributions</title></rect>
+    <rect x="48" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-10-07: 0 contributions</title></rect>
+    <rect x="48" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-10-08: 0 contributions</title></rect>
+    <rect x="48" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-10-09: 0 contributions</title></rect>
+    <rect x="48" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-10-10: 0 contributions</title></rect>
+    <rect x="48" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-10-11: 0 contributions</title></rect>
+    <rect x="48" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-10-12: 0 contributions</title></rect>
+    <rect x="59" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-10-13: 0 contributions</title></rect>
+    <rect x="59" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-10-14: 0 contributions</title></rect>
+    <rect x="59" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-10-15: 0 contributions</title></rect>
+    <rect x="59" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-10-16: 0 contributions</title></rect>
+    <rect x="59" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-10-17: 0 contributions</title></rect>
+    <rect x="59" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-10-18: 0 contributions</title></rect>
+    <rect x="59" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-10-19: 0 contributions</title></rect>
+    <rect x="70" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-10-20: 0 contributions</title></rect>
+    <rect x="70" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-10-21: 0 contributions</title></rect>
+    <rect x="70" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-10-22: 0 contributions</title></rect>
+    <rect x="70" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-10-23: 0 contributions</title></rect>
+    <rect x="70" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-10-24: 0 contributions</title></rect>
+    <rect x="70" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-10-25: 0 contributions</title></rect>
+    <rect x="70" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-10-26: 0 contributions</title></rect>
+    <rect x="81" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-10-27: 0 contributions</title></rect>
+    <rect x="81" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-10-28: 0 contributions</title></rect>
+    <rect x="81" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-10-29: 0 contributions</title></rect>
+    <rect x="81" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-10-30: 0 contributions</title></rect>
+    <rect x="81" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-10-31: 0 contributions</title></rect>
+    <rect x="81" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-11-01: 0 contributions</title></rect>
+    <rect x="81" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-11-02: 0 contributions</title></rect>
+    <rect x="92" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-11-03: 0 contributions</title></rect>
+    <rect x="92" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-11-04: 0 contributions</title></rect>
+    <rect x="92" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-11-05: 0 contributions</title></rect>
+    <rect x="92" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-11-06: 0 contributions</title></rect>
+    <rect x="92" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-11-07: 0 contributions</title></rect>
+    <rect x="92" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-11-08: 0 contributions</title></rect>
+    <rect x="92" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-11-09: 0 contributions</title></rect>
+    <rect x="103" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-11-10: 0 contributions</title></rect>
+    <rect x="103" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-11-11: 0 contributions</title></rect>
+    <rect x="103" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-11-12: 0 contributions</title></rect>
+    <rect x="103" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-11-13: 0 contributions</title></rect>
+    <rect x="103" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-11-14: 0 contributions</title></rect>
+    <rect x="103" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-11-15: 0 contributions</title></rect>
+    <rect x="103" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-11-16: 0 contributions</title></rect>
+    <rect x="114" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-11-17: 0 contributions</title></rect>
+    <rect x="114" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-11-18: 0 contributions</title></rect>
+    <rect x="114" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-11-19: 0 contributions</title></rect>
+    <rect x="114" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-11-20: 0 contributions</title></rect>
+    <rect x="114" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-11-21: 0 contributions</title></rect>
+    <rect x="114" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-11-22: 0 contributions</title></rect>
+    <rect x="114" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-11-23: 0 contributions</title></rect>
+    <rect x="125" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-11-24: 0 contributions</title></rect>
+    <rect x="125" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-11-25: 0 contributions</title></rect>
+    <rect x="125" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-11-26: 0 contributions</title></rect>
+    <rect x="125" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-11-27: 0 contributions</title></rect>
+    <rect x="125" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-11-28: 0 contributions</title></rect>
+    <rect x="125" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-11-29: 0 contributions</title></rect>
+    <rect x="125" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-11-30: 0 contributions</title></rect>
+    <rect x="136" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-12-01: 0 contributions</title></rect>
+    <rect x="136" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-12-02: 0 contributions</title></rect>
+    <rect x="136" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-12-03: 0 contributions</title></rect>
+    <rect x="136" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-12-04: 0 contributions</title></rect>
+    <rect x="136" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-12-05: 0 contributions</title></rect>
+    <rect x="136" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-12-06: 0 contributions</title></rect>
+    <rect x="136" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-12-07: 0 contributions</title></rect>
+    <rect x="147" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-12-08: 0 contributions</title></rect>
+    <rect x="147" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-12-09: 0 contributions</title></rect>
+    <rect x="147" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-12-10: 0 contributions</title></rect>
+    <rect x="147" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-12-11: 0 contributions</title></rect>
+    <rect x="147" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-12-12: 0 contributions</title></rect>
+    <rect x="147" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-12-13: 0 contributions</title></rect>
+    <rect x="147" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-12-14: 0 contributions</title></rect>
+    <rect x="158" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-12-15: 0 contributions</title></rect>
+    <rect x="158" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-12-16: 0 contributions</title></rect>
+    <rect x="158" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-12-17: 0 contributions</title></rect>
+    <rect x="158" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-12-18: 0 contributions</title></rect>
+    <rect x="158" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-12-19: 0 contributions</title></rect>
+    <rect x="158" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-12-20: 0 contributions</title></rect>
+    <rect x="158" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-12-21: 0 contributions</title></rect>
+    <rect x="169" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-12-22: 0 contributions</title></rect>
+    <rect x="169" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-12-23: 0 contributions</title></rect>
+    <rect x="169" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-12-24: 0 contributions</title></rect>
+    <rect x="169" y="37" width="9" height="9" rx="1" class="cell-0"><title>2025-12-25: 0 contributions</title></rect>
+    <rect x="169" y="48" width="9" height="9" rx="1" class="cell-0"><title>2025-12-26: 0 contributions</title></rect>
+    <rect x="169" y="59" width="9" height="9" rx="1" class="cell-0"><title>2025-12-27: 0 contributions</title></rect>
+    <rect x="169" y="70" width="9" height="9" rx="1" class="cell-0"><title>2025-12-28: 0 contributions</title></rect>
+    <rect x="180" y="4" width="9" height="9" rx="1" class="cell-0"><title>2025-12-29: 0 contributions</title></rect>
+    <rect x="180" y="15" width="9" height="9" rx="1" class="cell-0"><title>2025-12-30: 0 contributions</title></rect>
+    <rect x="180" y="26" width="9" height="9" rx="1" class="cell-0"><title>2025-12-31: 0 contributions</title></rect>
+    <rect x="180" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-01-01: 0 contributions</title></rect>
+    <rect x="180" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-01-02: 0 contributions</title></rect>
+    <rect x="180" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-01-03: 0 contributions</title></rect>
+    <rect x="180" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-01-04: 0 contributions</title></rect>
+    <rect x="191" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-01-05: 0 contributions</title></rect>
+    <rect x="191" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-01-06: 0 contributions</title></rect>
+    <rect x="191" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-01-07: 0 contributions</title></rect>
+    <rect x="191" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-01-08: 0 contributions</title></rect>
+    <rect x="191" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-01-09: 0 contributions</title></rect>
+    <rect x="191" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-01-10: 0 contributions</title></rect>
+    <rect x="191" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-01-11: 0 contributions</title></rect>
+    <rect x="202" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-01-12: 0 contributions</title></rect>
+    <rect x="202" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-01-13: 0 contributions</title></rect>
+    <rect x="202" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-01-14: 0 contributions</title></rect>
+    <rect x="202" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-01-15: 0 contributions</title></rect>
+    <rect x="202" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-01-16: 0 contributions</title></rect>
+    <rect x="202" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-01-17: 0 contributions</title></rect>
+    <rect x="202" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-01-18: 0 contributions</title></rect>
+    <rect x="213" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-01-19: 0 contributions</title></rect>
+    <rect x="213" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-01-20: 0 contributions</title></rect>
+    <rect x="213" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-01-21: 0 contributions</title></rect>
+    <rect x="213" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-01-22: 0 contributions</title></rect>
+    <rect x="213" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-01-23: 0 contributions</title></rect>
+    <rect x="213" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-01-24: 0 contributions</title></rect>
+    <rect x="213" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-01-25: 0 contributions</title></rect>
+    <rect x="224" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-01-26: 0 contributions</title></rect>
+    <rect x="224" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-01-27: 0 contributions</title></rect>
+    <rect x="224" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-01-28: 0 contributions</title></rect>
+    <rect x="224" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-01-29: 0 contributions</title></rect>
+    <rect x="224" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-01-30: 0 contributions</title></rect>
+    <rect x="224" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-01-31: 0 contributions</title></rect>
+    <rect x="224" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-02-01: 0 contributions</title></rect>
+    <rect x="235" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-02-02: 0 contributions</title></rect>
+    <rect x="235" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-02-03: 0 contributions</title></rect>
+    <rect x="235" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-02-04: 0 contributions</title></rect>
+    <rect x="235" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-02-05: 0 contributions</title></rect>
+    <rect x="235" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-02-06: 0 contributions</title></rect>
+    <rect x="235" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-02-07: 0 contributions</title></rect>
+    <rect x="235" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-02-08: 0 contributions</title></rect>
+    <rect x="246" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-02-09: 0 contributions</title></rect>
+    <rect x="246" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-02-10: 0 contributions</title></rect>
+    <rect x="246" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-02-11: 0 contributions</title></rect>
+    <rect x="246" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-02-12: 0 contributions</title></rect>
+    <rect x="246" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-02-13: 0 contributions</title></rect>
+    <rect x="246" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-02-14: 0 contributions</title></rect>
+    <rect x="246" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-02-15: 0 contributions</title></rect>
+    <rect x="257" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-02-16: 0 contributions</title></rect>
+    <rect x="257" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-02-17: 0 contributions</title></rect>
+    <rect x="257" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-02-18: 0 contributions</title></rect>
+    <rect x="257" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-02-19: 0 contributions</title></rect>
+    <rect x="257" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-02-20: 0 contributions</title></rect>
+    <rect x="257" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-02-21: 0 contributions</title></rect>
+    <rect x="257" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-02-22: 0 contributions</title></rect>
+    <rect x="268" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-02-23: 0 contributions</title></rect>
+    <rect x="268" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-02-24: 0 contributions</title></rect>
+    <rect x="268" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-02-25: 0 contributions</title></rect>
+    <rect x="268" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-02-26: 0 contributions</title></rect>
+    <rect x="268" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-02-27: 0 contributions</title></rect>
+    <rect x="268" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-02-28: 0 contributions</title></rect>
+    <rect x="268" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-03-01: 0 contributions</title></rect>
+    <rect x="279" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-03-02: 0 contributions</title></rect>
+    <rect x="279" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-03-03: 0 contributions</title></rect>
+    <rect x="279" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-03-04: 0 contributions</title></rect>
+    <rect x="279" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-03-05: 0 contributions</title></rect>
+    <rect x="279" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-03-06: 0 contributions</title></rect>
+    <rect x="279" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-03-07: 0 contributions</title></rect>
+    <rect x="279" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-03-08: 0 contributions</title></rect>
+    <rect x="290" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-03-09: 0 contributions</title></rect>
+    <rect x="290" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-03-10: 0 contributions</title></rect>
+    <rect x="290" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-03-11: 0 contributions</title></rect>
+    <rect x="290" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-03-12: 0 contributions</title></rect>
+    <rect x="290" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-03-13: 0 contributions</title></rect>
+    <rect x="290" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-03-14: 0 contributions</title></rect>
+    <rect x="290" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-03-15: 0 contributions</title></rect>
+    <rect x="301" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-03-16: 0 contributions</title></rect>
+    <rect x="301" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-03-17: 0 contributions</title></rect>
+    <rect x="301" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-03-18: 0 contributions</title></rect>
+    <rect x="301" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-03-19: 0 contributions</title></rect>
+    <rect x="301" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-03-20: 0 contributions</title></rect>
+    <rect x="301" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-03-21: 0 contributions</title></rect>
+    <rect x="301" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-03-22: 0 contributions</title></rect>
+    <rect x="312" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-03-23: 0 contributions</title></rect>
+    <rect x="312" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-03-24: 0 contributions</title></rect>
+    <rect x="312" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-03-25: 0 contributions</title></rect>
+    <rect x="312" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-03-26: 0 contributions</title></rect>
+    <rect x="312" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-03-27: 0 contributions</title></rect>
+    <rect x="312" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-03-28: 0 contributions</title></rect>
+    <rect x="312" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-03-29: 0 contributions</title></rect>
+    <rect x="323" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-03-30: 0 contributions</title></rect>
+    <rect x="323" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-03-31: 0 contributions</title></rect>
+    <rect x="323" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-04-01: 0 contributions</title></rect>
+    <rect x="323" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-04-02: 0 contributions</title></rect>
+    <rect x="323" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-04-03: 0 contributions</title></rect>
+    <rect x="323" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-04-04: 0 contributions</title></rect>
+    <rect x="323" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-04-05: 0 contributions</title></rect>
+    <rect x="334" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-04-06: 0 contributions</title></rect>
+    <rect x="334" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-04-07: 0 contributions</title></rect>
+    <rect x="334" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-04-08: 0 contributions</title></rect>
+    <rect x="334" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-04-09: 0 contributions</title></rect>
+    <rect x="334" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-04-10: 0 contributions</title></rect>
+    <rect x="334" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-04-11: 0 contributions</title></rect>
+    <rect x="334" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-04-12: 0 contributions</title></rect>
+    <rect x="345" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-04-13: 0 contributions</title></rect>
+    <rect x="345" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-04-14: 0 contributions</title></rect>
+    <rect x="345" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-04-15: 0 contributions</title></rect>
+    <rect x="345" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-04-16: 0 contributions</title></rect>
+    <rect x="345" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-04-17: 0 contributions</title></rect>
+    <rect x="345" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-04-18: 0 contributions</title></rect>
+    <rect x="345" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-04-19: 0 contributions</title></rect>
+    <rect x="356" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-04-20: 0 contributions</title></rect>
+    <rect x="356" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-04-21: 0 contributions</title></rect>
+    <rect x="356" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-04-22: 0 contributions</title></rect>
+    <rect x="356" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-04-23: 0 contributions</title></rect>
+    <rect x="356" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-04-24: 0 contributions</title></rect>
+    <rect x="356" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-04-25: 0 contributions</title></rect>
+    <rect x="356" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-04-26: 0 contributions</title></rect>
+    <rect x="367" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-04-27: 0 contributions</title></rect>
+    <rect x="367" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-04-28: 0 contributions</title></rect>
+    <rect x="367" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-04-29: 0 contributions</title></rect>
+    <rect x="367" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-04-30: 0 contributions</title></rect>
+    <rect x="367" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-05-01: 0 contributions</title></rect>
+    <rect x="367" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-05-02: 0 contributions</title></rect>
+    <rect x="367" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-05-03: 0 contributions</title></rect>
+    <rect x="378" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-05-04: 0 contributions</title></rect>
+    <rect x="378" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-05-05: 0 contributions</title></rect>
+    <rect x="378" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-05-06: 0 contributions</title></rect>
+    <rect x="378" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-05-07: 0 contributions</title></rect>
+    <rect x="378" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-05-08: 0 contributions</title></rect>
+    <rect x="378" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-05-09: 0 contributions</title></rect>
+    <rect x="378" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-05-10: 0 contributions</title></rect>
+    <rect x="389" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-05-11: 0 contributions</title></rect>
+    <rect x="389" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-05-12: 0 contributions</title></rect>
+    <rect x="389" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-05-13: 0 contributions</title></rect>
+    <rect x="389" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-05-14: 0 contributions</title></rect>
+    <rect x="389" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-05-15: 0 contributions</title></rect>
+    <rect x="389" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-05-16: 0 contributions</title></rect>
+    <rect x="389" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-05-17: 0 contributions</title></rect>
+    <rect x="400" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-05-18: 0 contributions</title></rect>
+    <rect x="400" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-05-19: 0 contributions</title></rect>
+    <rect x="400" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-05-20: 0 contributions</title></rect>
+    <rect x="400" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-05-21: 0 contributions</title></rect>
+    <rect x="400" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-05-22: 0 contributions</title></rect>
+    <rect x="400" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-05-23: 0 contributions</title></rect>
+    <rect x="400" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-05-24: 0 contributions</title></rect>
+    <rect x="411" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-05-25: 0 contributions</title></rect>
+    <rect x="411" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-05-26: 0 contributions</title></rect>
+    <rect x="411" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-05-27: 0 contributions</title></rect>
+    <rect x="411" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-05-28: 0 contributions</title></rect>
+    <rect x="411" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-05-29: 0 contributions</title></rect>
+    <rect x="411" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-05-30: 0 contributions</title></rect>
+    <rect x="411" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-05-31: 0 contributions</title></rect>
+    <rect x="422" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-06-01: 0 contributions</title></rect>
+    <rect x="422" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-06-02: 0 contributions</title></rect>
+    <rect x="422" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-06-03: 0 contributions</title></rect>
+    <rect x="422" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-06-04: 0 contributions</title></rect>
+    <rect x="422" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-06-05: 0 contributions</title></rect>
+    <rect x="422" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-06-06: 0 contributions</title></rect>
+    <rect x="422" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-06-07: 0 contributions</title></rect>
+    <rect x="433" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-06-08: 0 contributions</title></rect>
+    <rect x="433" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-06-09: 0 contributions</title></rect>
+    <rect x="433" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-06-10: 0 contributions</title></rect>
+    <rect x="433" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-06-11: 0 contributions</title></rect>
+    <rect x="433" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-06-12: 0 contributions</title></rect>
+    <rect x="433" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-06-13: 0 contributions</title></rect>
+    <rect x="433" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-06-14: 0 contributions</title></rect>
+    <rect x="444" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-06-15: 0 contributions</title></rect>
+    <rect x="444" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-06-16: 0 contributions</title></rect>
+    <rect x="444" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-06-17: 0 contributions</title></rect>
+    <rect x="444" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-06-18: 0 contributions</title></rect>
+    <rect x="444" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-06-19: 0 contributions</title></rect>
+    <rect x="444" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-06-20: 0 contributions</title></rect>
+    <rect x="444" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-06-21: 0 contributions</title></rect>
+    <rect x="455" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-06-22: 0 contributions</title></rect>
+    <rect x="455" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-06-23: 0 contributions</title></rect>
+    <rect x="455" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-06-24: 0 contributions</title></rect>
+    <rect x="455" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-06-25: 0 contributions</title></rect>
+    <rect x="455" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-06-26: 0 contributions</title></rect>
+    <rect x="455" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-06-27: 0 contributions</title></rect>
+    <rect x="455" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-06-28: 0 contributions</title></rect>
+    <rect x="466" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-06-29: 0 contributions</title></rect>
+    <rect x="466" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-06-30: 0 contributions</title></rect>
+    <rect x="466" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-07-01: 0 contributions</title></rect>
+    <rect x="466" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-07-02: 0 contributions</title></rect>
+    <rect x="466" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-07-03: 0 contributions</title></rect>
+    <rect x="466" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-07-04: 0 contributions</title></rect>
+    <rect x="466" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-07-05: 0 contributions</title></rect>
+    <rect x="477" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-07-06: 0 contributions</title></rect>
+    <rect x="477" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-07-07: 0 contributions</title></rect>
+    <rect x="477" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-07-08: 0 contributions</title></rect>
+    <rect x="477" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-07-09: 0 contributions</title></rect>
+    <rect x="477" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-07-10: 0 contributions</title></rect>
+    <rect x="477" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-07-11: 0 contributions</title></rect>
+    <rect x="477" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-07-12: 0 contributions</title></rect>
+    <rect x="488" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-07-13: 0 contributions</title></rect>
+    <rect x="488" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-07-14: 0 contributions</title></rect>
+    <rect x="488" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-07-15: 0 contributions</title></rect>
+    <rect x="488" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-07-16: 0 contributions</title></rect>
+    <rect x="488" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-07-17: 0 contributions</title></rect>
+    <rect x="488" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-07-18: 0 contributions</title></rect>
+    <rect x="488" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-07-19: 0 contributions</title></rect>
+    <rect x="499" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-07-20: 0 contributions</title></rect>
+    <rect x="499" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-07-21: 0 contributions</title></rect>
+    <rect x="499" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-07-22: 0 contributions</title></rect>
+    <rect x="499" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-07-23: 0 contributions</title></rect>
+    <rect x="499" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-07-24: 0 contributions</title></rect>
+    <rect x="499" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-07-25: 0 contributions</title></rect>
+    <rect x="499" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-07-26: 0 contributions</title></rect>
+    <rect x="510" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-07-27: 0 contributions</title></rect>
+    <rect x="510" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-07-28: 0 contributions</title></rect>
+    <rect x="510" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-07-29: 0 contributions</title></rect>
+    <rect x="510" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-07-30: 0 contributions</title></rect>
+    <rect x="510" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-07-31: 0 contributions</title></rect>
+    <rect x="510" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-08-01: 0 contributions</title></rect>
+    <rect x="510" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-08-02: 0 contributions</title></rect>
+    <rect x="521" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-08-03: 0 contributions</title></rect>
+    <rect x="521" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-08-04: 0 contributions</title></rect>
+    <rect x="521" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-08-05: 0 contributions</title></rect>
+    <rect x="521" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-08-06: 0 contributions</title></rect>
+    <rect x="521" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-08-07: 0 contributions</title></rect>
+    <rect x="521" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-08-08: 0 contributions</title></rect>
+    <rect x="521" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-08-09: 0 contributions</title></rect>
+    <rect x="532" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-08-10: 0 contributions</title></rect>
+    <rect x="532" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-08-11: 0 contributions</title></rect>
+    <rect x="532" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-08-12: 0 contributions</title></rect>
+    <rect x="532" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-08-13: 0 contributions</title></rect>
+    <rect x="532" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-08-14: 0 contributions</title></rect>
+    <rect x="532" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-08-15: 0 contributions</title></rect>
+    <rect x="532" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-08-16: 0 contributions</title></rect>
+    <rect x="543" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-08-17: 0 contributions</title></rect>
+    <rect x="543" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-08-18: 0 contributions</title></rect>
+    <rect x="543" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-08-19: 0 contributions</title></rect>
+    <rect x="543" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-08-20: 0 contributions</title></rect>
+    <rect x="543" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-08-21: 0 contributions</title></rect>
+    <rect x="543" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-08-22: 0 contributions</title></rect>
+    <rect x="543" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-08-23: 0 contributions</title></rect>
+    <rect x="554" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-08-24: 0 contributions</title></rect>
+    <rect x="554" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-08-25: 0 contributions</title></rect>
+    <rect x="554" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-08-26: 0 contributions</title></rect>
+    <rect x="554" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-08-27: 0 contributions</title></rect>
+    <rect x="554" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-08-28: 0 contributions</title></rect>
+    <rect x="554" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-08-29: 0 contributions</title></rect>
+    <rect x="554" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-08-30: 0 contributions</title></rect>
+    <rect x="565" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-08-31: 0 contributions</title></rect>
+    <rect x="565" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-09-01: 0 contributions</title></rect>
+    <rect x="565" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-09-02: 0 contributions</title></rect>
+    <rect x="565" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-09-03: 0 contributions</title></rect>
+    <rect x="565" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-09-04: 0 contributions</title></rect>
+    <rect x="565" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-09-05: 0 contributions</title></rect>
+    <rect x="565" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-09-06: 0 contributions</title></rect>
+    <rect x="576" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-09-07: 0 contributions</title></rect>
+    <rect x="576" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-09-08: 0 contributions</title></rect>
+    <rect x="576" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-09-09: 0 contributions</title></rect>
+    <rect x="576" y="37" width="9" height="9" rx="1" class="cell-0"><title>2026-09-10: 0 contributions</title></rect>
+    <rect x="576" y="48" width="9" height="9" rx="1" class="cell-0"><title>2026-09-11: 0 contributions</title></rect>
+    <rect x="576" y="59" width="9" height="9" rx="1" class="cell-0"><title>2026-09-12: 0 contributions</title></rect>
+    <rect x="576" y="70" width="9" height="9" rx="1" class="cell-0"><title>2026-09-13: 0 contributions</title></rect>
+    <rect x="587" y="4" width="9" height="9" rx="1" class="cell-0"><title>2026-09-14: 0 contributions</title></rect>
+    <rect x="587" y="15" width="9" height="9" rx="1" class="cell-0"><title>2026-09-15: 0 contributions</title></rect>
+    <rect x="587" y="26" width="9" height="9" rx="1" class="cell-0"><title>2026-09-16: 0 contributions</title></rect>
+  </g>
+
+  <!-- Stats -->
+  <g transform="translate(560, 42)">
+    <rect width="140" height="68" rx="4" fill="none" class="border" stroke-width="0.5"/>
+
+    <text x="15" y="18" class="label text-dim">REPOSITORIES</text>
+    <text x="15" y="32" class="stat text-accent">—</text>
+    <text x="40" y="32" class="label text-dim">unavailable offline</text>
+
+    <line x1="15" y1="40" x2="125" y2="40" class="line" stroke-width="0.5"/>
+
+    <text x="15" y="54" class="label text-dim">FOCUS AREAS</text>
+    <text x="15" y="64" class="label text">GitHub auth required</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(20, 115)">
+    <text x="0" y="0" class="label text-dim">Less</text>
+    <rect x="30" y="-7" width="9" height="9" rx="1" class="cell-0"/>
+    <rect x="41" y="-7" width="9" height="9" rx="1" class="cell-1"/>
+    <rect x="52" y="-7" width="9" height="9" rx="1" class="cell-2"/>
+    <rect x="63" y="-7" width="9" height="9" rx="1" class="cell-3"/>
+    <rect x="74" y="-7" width="9" height="9" rx="1" class="cell-4"/>
+    <text x="90" y="0" class="label text-dim">More</text>
+  </g>
+
+</svg>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 210" fill="none">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0a0a0f; }
+      .card { fill: #111118; stroke: #1a1a2e; }
+      .card-active { fill: #111118; stroke: #3b82f6; }
+      .text { fill: #e5e7eb; }
+      .text-dim { fill: #6b7280; }
+      .text-accent { fill: #60a5fa; }
+      .line { stroke: #1a1a2e; }
+      .line-accent { stroke: #3b82f6; }
+      .num { fill: #3b82f6; }
+    }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #fafafa; }
+      .card { fill: #ffffff; stroke: #e5e7eb; }
+      .card-active { fill: #ffffff; stroke: #2563eb; }
+      .text { fill: #1f2937; }
+      .text-dim { fill: #9ca3af; }
+      .text-accent { fill: #2563eb; }
+      .line { stroke: #e5e7eb; }
+      .line-accent { stroke: #2563eb; }
+      .num { fill: #2563eb; }
+    }
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .mono { font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace; }
+    .title { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; }
+    .principle { font-size: 11px; font-weight: 600; }
+    .desc { font-size: 10px; }
+    .evidence { font-size: 9px; font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace; }
+    .num-text { font-size: 18px; font-weight: 700; font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace; }
+  </style>
+
+  <rect width="700" height="210" class="bg"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" class="title text">ENGINEERING DNA</text>
+  <text x="350" y="38" text-anchor="middle" class="desc text-dim">How I think about systems</text>
+
+  <!-- Connection line -->
+  <line x1="50" y1="55" x2="650" y2="55" class="line" stroke-width="0.5"/>
+
+  <!-- Principle 01 -->
+  <g transform="translate(30, 70)">
+    <rect width="150" height="120" rx="4" class="card-active" stroke-width="1"/>
+    <text x="15" y="28" class="num-text">01</text>
+    <text x="15" y="48" class="principle text">SECURITY AT</text>
+    <text x="15" y="62" class="principle text">THE BOUNDARY</text>
+    <line x1="15" y1="72" x2="135" y2="72" class="line" stroke-width="0.5"/>
+    <text x="15" y="88" class="desc text-dim">Protect data with isolation</text>
+    <text x="15" y="100" class="desc text-dim">and role-based access</text>
+    <text x="15" y="115" class="evidence text-accent">Civic-eye: Supabase RLS</text>
+  </g>
+
+  <!-- Principle 02 -->
+  <g transform="translate(195, 70)">
+    <rect width="150" height="120" rx="4" class="card-active" stroke-width="1"/>
+    <text x="15" y="28" class="num-text">02</text>
+    <text x="15" y="48" class="principle text">HUMAN</text>
+    <text x="15" y="62" class="principle text">VERIFICATION</text>
+    <line x1="15" y1="72" x2="135" y2="72" class="line" stroke-width="0.5"/>
+    <text x="15" y="88" class="desc text-dim">AI assists extraction;</text>
+    <text x="15" y="100" class="desc text-dim">verification stays explicit</text>
+    <text x="15" y="115" class="evidence text-accent">IMNCI-Safe: LLM → verify</text>
+  </g>
+
+  <!-- Principle 03 -->
+  <g transform="translate(360, 70)">
+    <rect width="150" height="120" rx="4" class="card-active" stroke-width="1"/>
+    <text x="15" y="28" class="num-text">03</text>
+    <text x="15" y="48" class="principle text">DETERMINISTIC</text>
+    <text x="15" y="62" class="principle text">LOGIC</text>
+    <line x1="15" y1="72" x2="135" y2="72" class="line" stroke-width="0.5"/>
+    <text x="15" y="88" class="desc text-dim">Same input, same output.</text>
+    <text x="15" y="100" class="desc text-dim">Always.</text>
+    <text x="15" y="115" class="evidence text-accent">IMNCI-Safe: rules engine</text>
+  </g>
+
+  <!-- Principle 04 -->
+  <g transform="translate(525, 70)">
+    <rect width="150" height="120" rx="4" class="card-active" stroke-width="1"/>
+    <text x="15" y="28" class="num-text">04</text>
+    <text x="15" y="48" class="principle text">INCOMPLETE</text>
+    <text x="15" y="62" class="principle text">STAYS INCOMPLETE</text>
+    <line x1="15" y1="72" x2="135" y2="72" class="line" stroke-width="0.5"/>
+    <text x="15" y="88" class="desc text-dim">Missing data blocks decision.</text>
+    <text x="15" y="100" class="desc text-dim">Never force a result.</text>
+    <text x="15" y="115" class="evidence text-accent">IMNCI-Safe: UNKNOWN ≠ false</text>
+  </g>
+
+</svg>

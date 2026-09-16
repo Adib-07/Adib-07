@@ -2,14 +2,18 @@
 
 # Adib Sunasra
 
-### Full-Stack Developer · Systems Builder
+### Full-Stack Developer · AI/ML · Systems Builder
 
 Building software systems under real constraints —
 where AI, security, deterministic logic, and human workflows meet.
 
 <br>
 
-[WORK](#selected-work) · [SYSTEMS](#systems-map) · [ENGINEERING](#engineering-principles) · [STACK](#stack)
+![Portrait](assets/adib-portrait.svg)
+
+<br>
+
+[GitHub](https://github.com/Adib-07) · [LinkedIn](https://linkedin.com/in/adib-sunasra)
 
 </div>
 
@@ -17,135 +21,19 @@ where AI, security, deterministic logic, and human workflows meet.
 
 ---
 
-## Systems Map
+## What I Am Building Toward
 
-<div align="center">
+I build practical systems where AI assists extraction and analysis, but deterministic logic makes the final call. Security belongs at the data layer — enforced by the database, not application middleware. Incomplete information stays incomplete; `UNKNOWN` is never `false`.
 
-![Systems Map](assets/systems-map.svg)
-
-</div>
+Currently working at the intersection of AI-assisted applications, full-stack development, and systems that operate under real constraints.
 
 ---
 
-## Selected Work
-
-### 01 / Civic-eye — Civic Operations
-
-Multi-tenant civic issue platform with database-enforced access control and SLA tracking.
-
-- Supabase RLS — all access control enforced at the database layer
-- 4-role system: citizen, ward_officer, admin, super_admin
-- Photo evidence, GPS, before/after resolution comparison
-- No custom backend server — frontend reads directly via Supabase SDK
-
-`React 19` · `TanStack Start` · `Supabase` · `Leaflet` · `TypeScript`
+## Engineering DNA
 
 <div align="center">
 
-[**Live Demo**](https://civic-eye-alpha.vercel.app) · [**Source**](https://github.com/Adib-07/Civic-eye)
-
-</div>
-
----
-
-### 02 / IMNCI-Safe — Responsible AI
-
-Clinical decision support combining LLM extraction with deterministic safety rules.
-
-- Three-layer architecture: Gemini extracts → human verifies → rules decide
-- `UNKNOWN` is never converted to `false` — missing data blocks classification
-- Regex fallback when Gemini API is unavailable
-- 245 automated tests across rules engine, safety boundaries, and extraction
-
-`Next.js 16` · `Gemini` · `Vitest` · `TypeScript` · `Tailwind CSS`
-
-<div align="center">
-
-[**Live Demo**](https://imnci-safe.vercel.app) · [**Source**](https://github.com/Adib-07/IMNCI-Safe)
-
-</div>
-
----
-
-### 03 / CIRCUVA — Campus Operations
-
-Campus issue reporting with a closed-loop verification workflow and custom SVG rendering.
-
-- Report → dispatch → resolve → verify pipeline with enforced status transitions
-- Custom SVG campus map and analytics charts — zero external charting libraries
-- JWT/RBAC with PBKDF2-SHA256 and role-based access control
-- 66 automated tests covering security, API, and workflow paths
-
-`FastAPI` · `SQLAlchemy` · `JWT/RBAC` · `Python` · `SQLite`
-
-<div align="center">
-
-[**Source**](https://github.com/Adib-07/CIRCUVA)
-
-</div>
-
----
-
-### 04 / Jervis — Local AI
-
-Modular personal AI assistant with voice interaction and local LLM support.
-
-- Text, voice, or web input routed through command handler
-- On-device by default — SQLite memory, macOS integration, no cloud dependency
-- Dual LLM backend: OpenAI when configured, Ollama as fallback
-- Local web UI with conversation log, quick actions, microphone input
-
-`Python` · `OpenAI/Ollama` · `SQLite` · `pyttsx3`
-
-<div align="center">
-
-[**Source**](https://github.com/Adib-07/Jervis)
-
-</div>
-
----
-
-## Engineering Principles
-
-<div align="center">
-
-![Engineering Principles](assets/engineering-principles.svg)
-
-</div>
-
----
-
-## Proof
-
-<div align="center">
-
-| **311** | **DATABASE-ENFORCED** | **UNKNOWN ≠ false** | **JWT / RBAC** | **CUSTOM SVG** | **LOCAL-FIRST** |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| AUTOMATED TESTS | RLS policies | SAFETY INVARIANT | ACCESS CONTROL | CAMPUS MAP | AI ARCHITECTURE |
-| 245 IMNCI-Safe + 66 CIRCUVA | Civic-eye | IMNCI-Safe | CIRCUVA | CIRCUVA | Jervis |
-
-</div>
-
----
-
-## Stack
-
-<div align="center">
-
-**LANGUAGES**
-TypeScript · Python · JavaScript
-
-**APPLICATIONS**
-React · Next.js · TanStack · FastAPI
-
-**DATA**
-Supabase · PostgreSQL · SQLite · SQLAlchemy
-
-**AI**
-Gemini · OpenAI · Ollama
-
-**ENGINEERING**
-Vitest · pytest · RLS · RBAC · JWT · PBKDF2
+![Engineering DNA](assets/engineering-dna.svg)
 
 </div>
 
@@ -153,18 +41,98 @@ Vitest · pytest · RLS · RBAC · JWT · PBKDF2
 
 ## How I Think
 
-**AI assists. Rules decide.**
-
 **Security belongs at the data layer.**
+Protect data with isolation and role-based access. Not middleware. Not application logic. The database enforces the rules.
+
+**AI assists. Rules decide.**
+Use AI for extraction and analysis. Never for critical decisions. The final call belongs to deterministic logic.
 
 **Incomplete information should remain incomplete.**
+Missing data blocks decision. Never force a result. `UNKNOWN` is not `false`.
 
 **Evidence should survive the workflow.**
+Every action should be traceable, verifiable, and reproducible. Photos, logs, audit trails — they exist because the system requires them.
+
+---
+
+## Tech DNA
+
+<div align="center">
+
+**LANGUAGES** · TypeScript · Python · JavaScript · C
+
+**FRONTEND** · React · Next.js · TanStack · Tailwind CSS
+
+**BACKEND** · FastAPI · Supabase · SQLAlchemy
+
+**AI** · Gemini · OpenAI · Ollama
+
+**DATA** · PostgreSQL · SQLite · Supabase RLS
+
+**ENGINEERING** · Vitest · pytest · JWT · RBAC · PBKDF2
+
+</div>
+
+---
+
+## Engineering Direction
+
+<div align="center">
+
+![Engineering Direction](assets/engineering-direction.svg)
+
+</div>
+
+---
+
+## Selected Builds
+
+### Civic-eye
+
+Civic operations platform with database-enforced access control.
+
+Multi-tenant isolation · Supabase RLS · 4-role system · Photo evidence · GPS
+
+[Source](https://github.com/Adib-07/Civic-eye) · [Live Demo](https://civic-eye-alpha.vercel.app)
+
+---
+
+### IMNCI-Safe
+
+AI-assisted clinical classification with deterministic safety rules.
+
+LLM extraction · Human verification · Deterministic rules · UNKNOWN invariant · 245 tests
+
+[Source](https://github.com/Adib-07/IMNCI-Safe)
+
+---
+
+### CIRCUVA
+
+Campus operations system with custom SVG rendering.
+
+FastAPI · JWT/RBAC · Custom SVG maps · Closed-loop verification · 66 tests
+
+[Source](https://github.com/Adib-07/CIRCUVA)
+
+---
+
+### Jervis
+
+Personal AI assistant with voice interaction and local-first architecture.
+
+Voice/text input · Local LLM · SQLite memory · macOS integration · No cloud dependency
+
+[Source](https://github.com/Adib-07/Jervis)
 
 ---
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/-Adib--07-181717?style=flat&logo=github)](https://github.com/Adib-07)
+![Signature](assets/adib-signature.svg)
+
+<br>
+
+**BUILD · LEARN · IMPROVE**
 
 </div>

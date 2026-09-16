@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0a0a0f; }
+      .grid { stroke: #1a1a2e; }
+      .face { fill: #1a1a2e; stroke: #2a2a3e; }
+      .hair { fill: #0d0d15; }
+      .shirt { fill: #111118; stroke: #1a1a2e; }
+      .accent { stroke: #3b82f6; }
+      .accent-fill { fill: #3b82f6; }
+      .label { fill: #6b7280; }
+      .label-accent { fill: #60a5fa; }
+      .line { stroke: #1f1f2e; }
+      .scan { stroke: #3b82f6; opacity: 0.3; }
+      .meta { fill: #4b5563; }
+    }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #fafafa; }
+      .grid { stroke: #e5e7eb; }
+      .face { fill: #e5e7eb; stroke: #d1d5db; }
+      .hair { fill: #1f2937; }
+      .shirt { fill: #1f2937; stroke: #374151; }
+      .accent { stroke: #2563eb; }
+      .accent-fill { fill: #2563eb; }
+      .label { fill: #9ca3af; }
+      .label-accent { fill: #2563eb; }
+      .line { stroke: #e5e7eb; }
+      .scan { stroke: #2563eb; opacity: 0.2; }
+      .meta { fill: #6b7280; }
+    }
+    text { font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace; }
+    .title { font-size: 11px; font-weight: 600; letter-spacing: 2px; }
+    .sub { font-size: 8px; letter-spacing: 1px; }
+    .coord { font-size: 7px; }
+  </style>
+
+  <!-- Background -->
+  <rect width="400" height="500" class="bg"/>
+
+  <!-- Technical grid -->
+  <g class="grid" stroke-width="0.5" opacity="0.5">
+    <line x1="0" y1="50" x2="400" y2="50"/>
+    <line x1="0" y1="100" x2="400" y2="100"/>
+    <line x1="0" y1="150" x2="400" y2="150"/>
+    <line x1="0" y1="200" x2="400" y2="200"/>
+    <line x1="0" y1="250" x2="400" y2="250"/>
+    <line x1="0" y1="300" x2="400" y2="300"/>
+    <line x1="0" y1="350" x2="400" y2="350"/>
+    <line x1="0" y1="400" x2="400" y2="400"/>
+    <line x1="0" y1="450" x2="400" y2="450"/>
+    <line x1="50" y1="0" x2="50" y2="500"/>
+    <line x1="100" y1="0" x2="100" y2="500"/>
+    <line x1="150" y1="0" x2="150" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="250" y1="0" x2="250" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/>
+    <line x1="350" y1="0" x2="350" y2="500"/>
+  </g>
+
+  <!-- Portrait frame -->
+  <rect x="100" y="60" width="200" height="260" rx="4" fill="none" class="accent" stroke-width="1" opacity="0.4"/>
+
+  <!-- Cross-hair markers -->
+  <line x1="95" y1="190" x2="105" y2="190" class="accent" stroke-width="0.5" opacity="0.6"/>
+  <line x1="100" y1="185" x2="100" y2="195" class="accent" stroke-width="0.5" opacity="0.6"/>
+  <line x1="295" y1="190" x2="305" y2="190" class="accent" stroke-width="0.5" opacity="0.6"/>
+  <line x1="300" y1="185" x2="300" y2="195" class="accent" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- Head shape - geometric representation -->
+  <ellipse cx="200" cy="165" rx="52" ry="62" class="face" stroke-width="1"/>
+
+  <!-- Hair - top section -->
+  <path d="M148 145 Q148 105 200 95 Q252 105 252 145 L252 130 Q252 90 200 80 Q148 90 148 130 Z" class="hair"/>
+  <path d="M152 148 Q152 115 200 105 Q248 115 248 148" fill="none" stroke="#2a2a3e" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Face features - minimal geometric -->
+  <!-- Eyes -->
+  <ellipse cx="180" cy="160" rx="8" ry="4" fill="#0d0d15" opacity="0.8"/>
+  <ellipse cx="220" cy="160" rx="8" ry="4" fill="#0d0d15" opacity="0.8"/>
+  <circle cx="180" cy="160" r="2" fill="#1a1a2e"/>
+  <circle cx="220" cy="160" r="2" fill="#1a1a2e"/>
+
+  <!-- Nose - minimal line -->
+  <line x1="200" y1="165" x2="200" y2="185" stroke="#2a2a3e" stroke-width="0.8"/>
+
+  <!-- Mouth - subtle -->
+  <path d="M188 198 Q200 203 212 198" fill="none" stroke="#2a2a3e" stroke-width="0.8"/>
+
+  <!-- Jaw line -->
+  <path d="M148 175 Q148 220 200 230 Q252 220 252 175" fill="none" stroke="#2a2a3e" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Neck -->
+  <rect x="185" y="225" width="30" height="25" class="face" stroke-width="0.5"/>
+
+  <!-- Shirt/shoulders -->
+  <path d="M120 320 Q120 260 185 250 L215 250 Q280 260 280 320 L280 350 L120 350 Z" class="shirt" stroke-width="0.5"/>
+  <path d="M170 250 L200 240 L230 250" fill="none" stroke="#2a2a3e" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- Scan lines effect -->
+  <g class="scan" stroke-width="0.3">
+    <line x1="100" y1="120" x2="300" y2="120"/>
+    <line x1="100" y1="160" x2="300" y2="160"/>
+    <line x1="100" y1="200" x2="300" y2="200"/>
+    <line x1="100" y1="240" x2="300" y2="240"/>
+  </g>
+
+  <!-- Corner brackets -->
+  <path d="M105 65 L105 75 M105 65 L115 65" class="accent" stroke-width="1" fill="none"/>
+  <path d="M295 65 L295 75 M295 65 L285 65" class="accent" stroke-width="1" fill="none"/>
+  <path d="M105 315 L105 305 M105 315 L115 315" class="accent" stroke-width="1" fill="none"/>
+  <path d="M295 315 L295 305 M295 315 L285 315" class="accent" stroke-width="1" fill="none"/>
+
+  <!-- Coordinate labels -->
+  <text x="108" y="58" class="coord label">x:0 y:0</text>
+  <text x="265" y="58" class="coord label">x:200 y:0</text>
+  <text x="108" y="330" class="coord label">x:0 y:260</text>
+
+  <!-- Metadata labels -->
+  <text x="200" y="380" text-anchor="middle" class="title label-accent">ADIB SUNASRA</text>
+  <text x="200" y="395" text-anchor="middle" class="sub label">FULL-STACK · AI/ML · SYSTEMS</text>
+
+  <!-- Decorative elements -->
+  <line x1="100" y1="410" x2="300" y2="410" class="line" stroke-width="0.5"/>
+
+  <!-- Terminal-style metadata -->
+  <text x="20" y="440" class="coord meta">identity: verified</text>
+  <text x="20" y="452" class="coord meta">type: developer</text>
+  <text x="20" y="464" class="coord meta">focus: systems</text>
+
+  <text x="380" y="440" text-anchor="end" class="coord meta">status: active</text>
+  <text x="380" y="452" text-anchor="end" class="coord meta">loc: building</text>
+  <text x="380" y="464" text-anchor="end" class="coord meta">dir: forward</text>
+
+  <!-- Bottom accent line -->
+  <line x1="20" y1="480" x2="380" y2="480" class="accent" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="200" cy="480" r="2" class="accent-fill" opacity="0.5"/>
+
+</svg>
