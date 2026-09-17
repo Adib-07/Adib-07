@@ -3,7 +3,7 @@
 Progressive ASCII Portrait Generator for GitHub Profile.
 
 Converts a source photo into a self-contained animated SVG that
-progressively reveals an ASCII/terminal portrait through 8 stages.
+progressively reveals an ASCII/terminal portrait through 7 stages.
 
 Usage:
     python3 scripts/generate-profile-portrait.py
@@ -16,46 +16,43 @@ import sys
 from pathlib import Path
 
 try:
-    from PIL import Image, ImageFilter, ImageOps
+    from PIL import Image, ImageFilter, ImageOps, ImageEnhance
 except ImportError:
     print("ERROR: Pillow is required. Install with: pip install Pillow", file=sys.stderr)
     sys.exit(1)
 
-# Paths
 REPO_ROOT = Path(__file__).parent.parent
 ASSETS_DIR = REPO_ROOT / "assets"
 SOURCE_IMG = ASSETS_DIR / "adib-source.png"
 OUTPUT_SVG = ASSETS_DIR / "adib-generating.svg"
 
-# Portrait grid dimensions
-COLS = 80
+# Grid dimensions — portrait aspect ratio
+COLS = 72
+CHAR_ASPECT = 0.55
+ROWS = 80
+
+# SVG rendering
 FONT_SIZE = 10
-
-# Character aspect ratio correction
-CHAR_ASPECT = 0.6
-ROWS = 64
-
-# SVG dimensions
 CHAR_W = FONT_SIZE * 0.6
 CHAR_H = FONT_SIZE
-SVG_W = 760
+SVG_W = round(COLS * CHAR_W + 60)
 MARGIN_TOP = 110
 MARGIN_BOTTOM = 100
 SVG_H = MARGIN_TOP + ROWS * CHAR_H + MARGIN_BOTTOM
 
-# ASCII palette: lightest to darkest (11 chars for better gradation)
-CHARS = " .,:;+*?%S#@"
+# ASCII palette: darkest to lightest (for dark-bg rendering)
+# Dark face pixels get dense chars; bright background gets spaces
+CHARS = "@%#*+=-:. "
 NUM_TIERS = len(CHARS)
 
-# Progressive reveal thresholds (tuned for resized grid: min ~0.18, mean ~0.40)
-STAGE_LUM_THRESHOLDS = [0.20, 0.26, 0.32, 0.40, 0.50, 0.62, 0.78, 1.01]
+# Progressive reveal: each threshold reveals more of the portrait
+STAGE_LUM_THRESHOLDS = [0.15, 0.25, 0.35, 0.45, 0.55, 0.70, 1.01]
 
-# Animation timing
 STAGE_TIMING = [
-    (0.0, 2.0), (0.5, 1.8), (1.0, 1.6), (1.6, 1.4),
-    (2.2, 1.2), (2.8, 1.0), (3.4, 0.8),
+    (0.0, 1.8), (0.6, 1.6), (1.2, 1.4), (1.8, 1.2),
+    (2.4, 1.0), (3.0, 0.8), (3.6, 0.6),
 ]
-FINAL_DELAY = 3.8
+FINAL_DELAY = 4.0
 
 STATUS_MSGS = [
     (0.0,  "> GENERATING PROFILE"),
@@ -65,7 +62,7 @@ STATUS_MSGS = [
     (2.0,  "> MAPPING ASCII CHARACTERS..."),
     (2.6,  "> REFINING FEATURES..."),
     (3.2,  "> FINALIZING PORTRAIT..."),
-    (3.8,  "> PROFILE READY"),
+    (4.0,  "> PROFILE READY"),
 ]
 
 HUD_LINES = [
@@ -73,23 +70,43 @@ HUD_LINES = [
     (0.8,  "STRUCTURE", "PROCESSING"),
     (1.6,  "FACIAL",    "PROCESSING"),
     (2.4,  "RENDER",    "PROCESSING"),
-    (3.8,  "IDENTITY",  "OK"),
-    (3.8,  "STRUCTURE", "OK"),
-    (3.8,  "FACIAL",    "OK"),
-    (3.8,  "RENDER",    "OK"),
+    (4.0,  "IDENTITY",  "OK"),
+    (4.0,  "STRUCTURE", "OK"),
+    (4.0,  "FACIAL",    "OK"),
+    (4.0,  "RENDER",    "OK"),
 ]
 
 PROGRESS_STEPS = [
     (0.0,  1, "10%"), (1.0,  3, "30%"), (1.8,  5, "50%"),
-    (2.6,  7, "70%"), (3.2,  9, "90%"), (3.8, 10, "100%"),
+    (2.6,  7, "70%"), (3.2,  9, "90%"), (4.0, 10, "100%"),
 ]
 
 
+def isolate_face(img: Image.Image) -> Image.Image:
+    """
+    Isolate the face/head region from the poster.
+
+    The source is a dark-themed design poster (1214x1295).
+    The face photograph is in the upper-left quadrant.
+    We use a fixed crop tuned to this specific source image.
+    """
+    w, h = img.size
+
+    # Fixed crop: head + face + upper shoulders
+    # Tuned to adib-source.png (1214x1295)
+    left = int(w * 0.054)   # ~65
+    top = int(h * 0.031)    # ~40
+    right = int(w * 0.243)  # ~295
+    bottom = int(h * 0.224) # ~290
+
+    return img.crop((left, top, right, bottom))
+
+
 def process_image(src: Path) -> tuple[list[list[float]], list[float], int]:
-    """Process source image: alpha handling, face crop, contrast enhancement."""
+    """Process source image into a luminance grid for ASCII conversion."""
     img = Image.open(src)
 
-    # Composite against white to handle alpha
+    # Composite alpha against white
     if img.mode == "RGBA":
         bg = Image.new("RGB", img.size, (255, 255, 255))
         bg.paste(img, mask=img.split()[3])
@@ -97,64 +114,52 @@ def process_image(src: Path) -> tuple[list[list[float]], list[float], int]:
     else:
         img = img.convert("RGB")
 
-    orig_w, orig_h = img.size
-
-    # Detect face region (non-white pixels)
-    gray_full = img.convert("L")
-    px = list(gray_full.getdata())
-    white_t = 235
-    min_x, max_x = orig_w, 0
-    min_y, max_y = orig_h, 0
-    for y in range(orig_h):
-        for x in range(orig_w):
-            if px[y * orig_w + x] < white_t:
-                min_x = min(min_x, x)
-                max_x = max(max_x, x)
-                min_y = min(min_y, y)
-                max_y = max(max_y, y)
-
-    if max_x <= min_x or max_y <= min_y:
-        min_x, min_y = 0, 0
-        max_x, max_y = orig_w, orig_h
-
-    # Margin
-    mx = int((max_x - min_x) * 0.06)
-    my = int((max_y - min_y) * 0.04)
-    c = (max(0, min_x - mx), max(0, min_y - my),
-         min(orig_w, max_x + mx), min(orig_h, max_y + my))
-
-    # Crop face
-    face = img.crop(c)
+    # Isolate face region
+    face = isolate_face(img)
     fw, fh = face.size
+
+    # Convert to grayscale
     gray = face.convert("L")
+
+    # Auto-contrast to maximize dynamic range
+    gray = ImageOps.autocontrast(gray, cutoff=2)
+
+    # Enhance contrast
+    enhancer = ImageEnhance.Contrast(gray)
+    gray = enhancer.enhance(1.8)
+
+    # Mild sharpening for feature definition
+    gray = gray.filter(ImageFilter.SHARPEN)
+
+    # Get pixel data
+    lum_px = list(gray.getdata())
 
     # Edge detection for feature enhancement
     edges = gray.filter(ImageFilter.FIND_EDGES)
     edge_px = [e / 255.0 for e in list(edges.getdata())]
 
-    # Gamma correction on luminance
-    gamma = 0.55
-    lum_px = list(gray.getdata())
+    # Gamma correction to bring out midtone detail
+    gamma = 0.65
     lum_enhanced = [math.pow(p / 255.0, gamma) for p in lum_px]
 
-    # Combine: 85% enhanced luminance + 15% edge detail
-    combined = [0.85 * l + 0.15 * e for l, e in zip(lum_enhanced, edge_px)]
+    # Combine: 80% luminance + 20% edge detail
+    combined = [0.80 * l + 0.20 * e for l, e in zip(lum_enhanced, edge_px)]
 
-    # Resize with aspect correction
+    # Compute target grid height with aspect ratio correction
     img_aspect = fh / fw
     target_aspect = img_aspect * CHAR_ASPECT
     grid_h = int(COLS * target_aspect)
-    grid_h = max(grid_h, 30)
-    grid_h = min(grid_h, ROWS)
+    grid_h = max(grid_h, 40)
+    grid_h = min(grid_h, ROWS - 6)
 
-    # Create image from combined values
+    # Create image from combined values and resize
     combined_img = Image.new("L", (fw, fh))
     combined_img.putdata([int(v * 255) for v in combined])
     resized = combined_img.resize((COLS, grid_h), Image.Resampling.LANCZOS)
     rp = list(resized.getdata())
 
-    # Build grid
-    grid = []
+    # Build luminance grid — center vertically with padding
+    raw_grid = []
     all_lums = []
     for r in range(grid_h):
         row = []
@@ -162,14 +167,16 @@ def process_image(src: Path) -> tuple[list[list[float]], list[float], int]:
             lum = rp[r * COLS + c] / 255.0
             row.append(lum)
             all_lums.append(lum)
-        grid.append(row)
+        raw_grid.append(row)
 
-    while len(grid) < ROWS:
-        grid.append([1.0] * COLS)
+    # Center the portrait vertically: equal padding top/bottom
+    top_pad = (ROWS - grid_h) // 2
+    bot_pad = ROWS - grid_h - top_pad
+    grid = [[1.0] * COLS for _ in range(top_pad)] + raw_grid + [[1.0] * COLS for _ in range(bot_pad)]
 
-    # Percentile-based thresholds (include min value for darkest tier)
+    # Percentile-based thresholds for character mapping
     sl = sorted(all_lums)
-    thresholds = [sl[0]]  # Start at minimum value
+    thresholds = [sl[0]]
     for i in range(1, NUM_TIERS - 1):
         idx = int(i * len(sl) / (NUM_TIERS - 1))
         thresholds.append(sl[min(idx, len(sl) - 1)])
@@ -179,6 +186,7 @@ def process_image(src: Path) -> tuple[list[list[float]], list[float], int]:
 
 
 def lum_to_char(lum: float, thresholds: list[float]) -> str:
+    """Map luminance to ASCII character. Darker = denser char."""
     for i, t in enumerate(thresholds):
         if lum < t:
             return CHARS[i]
@@ -187,6 +195,7 @@ def lum_to_char(lum: float, thresholds: list[float]) -> str:
 
 def generate_stages(grid: list[list[float]], thresholds: list[float],
                     actual_rows: int) -> list[list[str]]:
+    """Generate progressive reveal stages from the luminance grid."""
     stages = []
     for threshold in STAGE_LUM_THRESHOLDS:
         stage_lines = []
@@ -205,6 +214,7 @@ def generate_stages(grid: list[list[float]], thresholds: list[float],
 
 
 def build_svg(stages: list[list[str]]) -> str:
+    """Build self-contained animated SVG with progressive reveal."""
     lines = []
 
     def w(s):
@@ -232,9 +242,10 @@ def build_svg(stages: list[list[str]]) -> str:
 
     w(f'  <rect width="{SVG_W}" height="{SVG_H}" fill="#0d1117"/>')
 
-    # HUD
+    # HUD header
     w(f'  <text x="20" y="35" class="h">&gt; GENERATING PROFILE</text>')
 
+    # Status messages with fade animations
     mi, mf, mh = 0.5, 0.3, 0.7
     for i, (_, msg) in enumerate(STATUS_MSGS):
         ts = round(i * mi, 2)
@@ -270,7 +281,7 @@ def build_svg(stages: list[list[str]]) -> str:
     for pt, _, pct in PROGRESS_STEPS:
         w(f'  <text x="{bx + bw + 10}" y="{by + 10}" class="dim" opacity="0" begin="{pt}s" dur="0.3s" fill="freeze">{pct}</text>')
 
-    # HUD lines
+    # HUD status lines (right side)
     hx = SVG_W - 180
     for i, (bt, label, value) in enumerate(HUD_LINES):
         hy = 35 + i * 16
@@ -278,7 +289,7 @@ def build_svg(stages: list[list[str]]) -> str:
         w(f'  <text x="{hx}" y="{hy}" class="proc" opacity="0" begin="{bt}s" dur="0.3s" fill="freeze">{esc(label)} ............. </text>')
         w(f'  <text x="{hx + 120}" y="{hy}" class="{cls}" opacity="0" begin="{bt}s" dur="0.3s" fill="freeze">{esc(value)}</text>')
 
-    # Frame
+    # Portrait frame with corner decorations
     fx = gx - 12
     fy = gy - 12
     fw = COLS * CHAR_W + 24
@@ -287,7 +298,7 @@ def build_svg(stages: list[list[str]]) -> str:
     for cx, cy, dx, dy in [(fx, fy, 8, 8), (fx + fw, fy, -8, 8), (fx, fy + fh, 8, -8), (fx + fw, fy + fh, -8, -8)]:
         w(f'  <path d="M{cx} {cy + dy} L{cx} {cy} L{cx + dx} {cy}" fill="none" stroke="#1f6feb" stroke-width="0.8" opacity="0.4"/>')
 
-    # Animated stages
+    # Progressive portrait stages
     for si in range(len(stages) - 1):
         delay, dur = STAGE_TIMING[si]
         w(f'  <g opacity="0" begin="{delay}s" dur="{dur}s" fill="freeze">')
@@ -298,7 +309,7 @@ def build_svg(stages: list[list[str]]) -> str:
         w('    </text>')
         w('  </g>')
 
-    # Final stage
+    # Final stage (always visible)
     w(f'  <g>')
     w(f'    <text x="{text_x}" y="{gy}" font-size="{FONT_SIZE}" fill="#e6edf3" xml:space="preserve"><tspan x="{text_x}" dy="0">')
     for ri, row_text in enumerate(stages[-1]):
@@ -307,13 +318,13 @@ def build_svg(stages: list[list[str]]) -> str:
     w('    </text>')
     w('  </g>')
 
-    # Scan line
+    # Scan line effect
     w(f'  <line x1="{fx}" y1="{fy}" x2="{fx + fw}" y2="{fy}" stroke="#1f6feb" stroke-width="0.5" opacity="0.2">')
     w(f'    <animate attributeName="y1" values="{fy};{fy + fh};{fy}" dur="6s" repeatCount="indefinite"/>')
     w(f'    <animate attributeName="y2" values="{fy + 20};{fy + fh + 20};{fy + 20}" dur="6s" repeatCount="indefinite"/>')
     w(f'  </line>')
 
-    # Identity
+    # Identity text below portrait
     iy = gy + ROWS * CHAR_H + 40
     w(f'  <text x="{SVG_W / 2}" y="{iy}" text-anchor="middle" class="nm" opacity="0" begin="{FINAL_DELAY}s" dur="0.6s" fill="freeze">ADIB SUNASRA</text>')
     w(f'  <text x="{SVG_W / 2}" y="{iy + 22}" text-anchor="middle" class="rl" opacity="0" begin="{FINAL_DELAY + 0.3}s" dur="0.5s" fill="freeze">FULL-STACK DEVELOPER · AI/ML · SYSTEMS BUILDER</text>')
@@ -325,10 +336,19 @@ def build_svg(stages: list[list[str]]) -> str:
 
 
 def print_preview(stages):
+    """Print the final ASCII portrait to terminal for verification."""
     print("\n=== FINAL ASCII PORTRAIT PREVIEW ===\n")
     for line in stages[-1]:
         print(line)
     print()
+
+
+def save_preview(stages, path: Path):
+    """Save final portrait as text file for inspection."""
+    with open(path, "w") as f:
+        for line in stages[-1]:
+            f.write(line + "\n")
+    print(f"Preview saved: {path}")
 
 
 def main():
@@ -339,6 +359,7 @@ def main():
     print("Reading source image...")
     grid, thresholds, actual_rows = process_image(SOURCE_IMG)
     print(f"  Grid: {COLS}x{ROWS} characters")
+    print(f"  Actual face rows: {actual_rows}")
 
     print("Generating progressive stages...")
     stages = generate_stages(grid, thresholds, actual_rows)
@@ -351,6 +372,10 @@ def main():
     OUTPUT_SVG.write_text(svg)
     size_kb = OUTPUT_SVG.stat().st_size / 1024
     print(f"Written: {OUTPUT_SVG} ({size_kb:.1f} KB)")
+
+    # Save text preview
+    preview_path = Path("/tmp/adib-ascii-preview.txt")
+    save_preview(stages, preview_path)
 
     print_preview(stages)
     return True
